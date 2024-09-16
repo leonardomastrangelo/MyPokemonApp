@@ -1,6 +1,6 @@
 import Foundation
 
-struct PokemonList: Codable {
+struct PokemonListData: Codable {
     let results: [Result]
 }
 
