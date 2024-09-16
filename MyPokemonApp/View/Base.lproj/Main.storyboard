@@ -19,8 +19,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CDV-4G-E3p">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdV-Bo-NYd" userLabel="Title">
-                                        <rect key="frame" x="149.66666666666666" y="0.0" width="94" height="48"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdV-Bo-NYd" userLabel="Title">
+                                        <rect key="frame" x="160" y="0.0" width="73.333333333333314" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -49,6 +49,7 @@
                     <connections>
                         <outlet property="appTitleLabel" destination="VdV-Bo-NYd" id="jMj-PQ-gMT"/>
                         <outlet property="tableView" destination="SlZ-MA-0Qq" id="5Ri-Qu-y86"/>
+                        <segue destination="aw1-jZ-WNK" kind="show" identifier="HomeToDetail" id="Qnm-6j-Ufk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -58,28 +59,28 @@
         <!--Details View Controller-->
         <scene sceneID="6LO-EF-0gY">
             <objects>
-                <viewController id="aw1-jZ-WNK" userLabel="Details View Controller" sceneMemberID="viewController">
+                <viewController id="aw1-jZ-WNK" userLabel="Details View Controller" customClass="DetailsViewController" customModule="MyPokemonApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pzk-jX-7he">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="d9a-mN-pW6">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evb-kO-hST" userLabel="Name">
-                                        <rect key="frame" x="138.33333333333334" y="0.0" width="116.66666666666666" height="345"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evb-kO-hST" userLabel="Name">
+                                        <rect key="frame" x="133.33333333333334" y="0.0" width="126.66666666666666" height="325"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5c-3I-ylB" userLabel="Height">
-                                        <rect key="frame" x="161" y="345" width="71" height="207"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5c-3I-ylB" userLabel="Height">
+                                        <rect key="frame" x="153.33333333333334" y="325" width="86.666666666666657" height="195"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erZ-no-OBK" userLabel="Weight">
-                                        <rect key="frame" x="161" y="552" width="71" height="207"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erZ-no-OBK" userLabel="Weight">
+                                        <rect key="frame" x="150.66666666666666" y="520" width="92" height="195"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -96,6 +97,12 @@
                             <constraint firstItem="d9a-mN-pW6" firstAttribute="leading" secondItem="Ytz-kq-gKW" secondAttribute="leading" id="uF0-1e-c3F"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mmU-Ik-GSw"/>
+                    <connections>
+                        <outlet property="heightLabel" destination="e5c-3I-ylB" id="lZM-oM-3kg"/>
+                        <outlet property="nameLabel" destination="Evb-kO-hST" id="v5d-vo-dFK"/>
+                        <outlet property="weightLabel" destination="erZ-no-OBK" id="tYU-U3-Xxl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qvg-B6-QsM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

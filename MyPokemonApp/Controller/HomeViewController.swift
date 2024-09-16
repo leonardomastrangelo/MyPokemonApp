@@ -4,6 +4,7 @@ class HomeViewController: UIViewController {
     
     var pokemonListManager = PokemonListManager()
     var pokemonList: [PokemonListItem] = []
+    var id: Int = 1
     
     @IBOutlet weak var appTitleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -19,6 +20,16 @@ class HomeViewController: UIViewController {
         // PokemonList
         pokemonListManager.delegate = self
         pokemonListManager.fetchPokemonList()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.TBView.homeToDetail {
+            if let detailVC = segue.destination as? DetailsViewController {
+                detailVC.id = id
+            } else {
+                print("error changing route")
+            }
+        }
     }
 
 }
@@ -60,8 +71,8 @@ extension HomeViewController: UITableViewDataSource {
 //MARK: - Table View Actions
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedPokemon = pokemonList[indexPath.row]
-        print(selectedPokemon.name)
         tableView.deselectRow(at: indexPath, animated: true)
+        id = indexPath.row + 1
+        performSegue(withIdentifier: K.TBView.homeToDetail, sender: self)
     }
 }
