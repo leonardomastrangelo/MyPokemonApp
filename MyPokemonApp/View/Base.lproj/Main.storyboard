@@ -68,19 +68,22 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evb-kO-hST" userLabel="Name">
-                                        <rect key="frame" x="133.33333333333334" y="0.0" width="126.66666666666666" height="325"/>
+                                        <rect key="frame" x="133.33333333333334" y="0.0" width="126.66666666666666" height="254"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9d8-vT-O2C">
+                                        <rect key="frame" x="178" y="254" width="37" height="156.33333333333337"/>
+                                    </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5c-3I-ylB" userLabel="Height">
-                                        <rect key="frame" x="153.33333333333334" y="325" width="86.666666666666657" height="195"/>
+                                        <rect key="frame" x="153.33333333333334" y="410.33333333333337" width="86.666666666666657" height="152.33333333333337"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erZ-no-OBK" userLabel="Weight">
-                                        <rect key="frame" x="150.66666666666666" y="520" width="92" height="195"/>
+                                        <rect key="frame" x="150.66666666666666" y="562.66666666666663" width="92" height="152.33333333333337"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -100,6 +103,7 @@
                     <navigationItem key="navigationItem" id="mmU-Ik-GSw"/>
                     <connections>
                         <outlet property="heightLabel" destination="e5c-3I-ylB" id="lZM-oM-3kg"/>
+                        <outlet property="loader" destination="9d8-vT-O2C" id="jpO-Ly-6r0"/>
                         <outlet property="nameLabel" destination="Evb-kO-hST" id="v5d-vo-dFK"/>
                         <outlet property="weightLabel" destination="erZ-no-OBK" id="tYU-U3-Xxl"/>
                     </connections>

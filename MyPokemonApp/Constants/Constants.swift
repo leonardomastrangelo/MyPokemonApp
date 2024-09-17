@@ -6,6 +6,7 @@ struct K {
     
     struct Network {
         static let baseUrl = "https://pokeapi.co/api/v2/pokemon"
+        static let limit = 151
     }
     
     struct TBView {

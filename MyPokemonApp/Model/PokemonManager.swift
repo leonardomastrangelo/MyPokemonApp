@@ -14,7 +14,7 @@ struct PokemonManager {
     }
     
     func fetchPokemonList() {
-        performRequest(urlString: K.Network.baseUrl, isSinglePokemon: false)
+        performRequest(urlString: "\(K.Network.baseUrl)?limit=\(K.Network.limit)", isSinglePokemon: false)
     }
     
     private func performRequest(urlString: String, isSinglePokemon: Bool) {
