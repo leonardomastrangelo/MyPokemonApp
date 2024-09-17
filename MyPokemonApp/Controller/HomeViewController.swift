@@ -2,8 +2,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var pokemonListManager = PokemonListManager()
-    var pokemonList: [PokemonListItem] = []
+    var pokemonManager = PokemonManager()
+    var pokemonList: [PokemonData] = []
     var id: Int = 1
     
     @IBOutlet weak var appTitleLabel: UILabel!
@@ -17,9 +17,10 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: K.TBView.cellNibName, bundle: nil), forCellReuseIdentifier: K.TBView.cellIdentifier)
-        // PokemonList
-        pokemonListManager.delegate = self
-        pokemonListManager.fetchPokemonList()
+        // Set PokemonManager delegate
+        pokemonManager.delegate = self
+        // Fetch Pokemon List
+        pokemonManager.fetchPokemonList()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -34,19 +35,22 @@ class HomeViewController: UIViewController {
 
 }
 
-
 //MARK: - Retrieving Pokemon List
-extension HomeViewController: PokemonListManagerDelegate {
-    func didUpdatePokemonList(_ pokemonListManager: PokemonListManager, pokemonList: PokemonListModel) {
+extension HomeViewController: PokemonManagerDelegate {
+    func didUpdatePokemonList(_ pokemonManager: PokemonManager, pokemonList: [PokemonData]) {
         DispatchQueue.main.async {
-            self.pokemonList = pokemonList.pokemonList
+            self.pokemonList = pokemonList
             self.tableView.reloadData()
         }
     }
     
-    func didFailWithError(error: any Error) {
+    // not used here
+    func didUpdatePokemon(_ pokemonManager: PokemonManager, pokemon: PokemonData) {
+    }
+    
+    func didFailWithError(error: Error) {
         DispatchQueue.main.async {
-            print(error)
+            print("Failed to fetch Pokemon list: \(error)")
         }
     }
 }
@@ -76,3 +80,4 @@ extension HomeViewController: UITableViewDelegate {
         performSegue(withIdentifier: K.TBView.homeToDetail, sender: self)
     }
 }
+
