@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gcq-na-ILU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JI7-gI-HjB">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CDV-4G-E3p">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdV-Bo-NYd" userLabel="Title">
                                         <rect key="frame" x="160" y="0.0" width="73.333333333333314" height="48"/>
@@ -26,7 +26,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SlZ-MA-0Qq">
-                                        <rect key="frame" x="0.0" y="68" width="393" height="647"/>
+                                        <rect key="frame" x="0.0" y="68" width="393" height="598"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -45,7 +45,8 @@
                             <constraint firstItem="CDV-4G-E3p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ULd-Mk-KYf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="13b-Yw-51T"/>
+                    <navigationItem key="navigationItem" id="JUz-li-ytp"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="appTitleLabel" destination="VdV-Bo-NYd" id="jMj-PQ-gMT"/>
                         <outlet property="tableView" destination="SlZ-MA-0Qq" id="5Ri-Qu-y86"/>
@@ -54,7 +55,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052.6717557251909" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="3014.5038167938928" y="-35.211267605633807"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="b4w-oT-bEe">
+            <objects>
+                <viewController id="hpB-sY-2z5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8cO-8K-PQb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ZVu-Iv-xZA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" selectedImage="gear" id="OEs-9i-Svb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LVE-7t-Hmq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1256" y="682"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="6LO-EF-0gY">
@@ -65,25 +82,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="d9a-mN-pW6">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evb-kO-hST" userLabel="Name">
-                                        <rect key="frame" x="133.33333333333334" y="0.0" width="126.66666666666666" height="254"/>
+                                        <rect key="frame" x="133.33333333333334" y="0.0" width="126.66666666666666" height="236.33333333333334"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9d8-vT-O2C">
-                                        <rect key="frame" x="178" y="254" width="37" height="156.33333333333337"/>
+                                        <rect key="frame" x="178" y="236.33333333333331" width="37" height="146"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5c-3I-ylB" userLabel="Height">
-                                        <rect key="frame" x="153.33333333333334" y="410.33333333333337" width="86.666666666666657" height="152.33333333333337"/>
+                                        <rect key="frame" x="153.33333333333334" y="382.33333333333331" width="86.666666666666657" height="141.66666666666669"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erZ-no-OBK" userLabel="Weight">
-                                        <rect key="frame" x="150.66666666666666" y="562.66666666666663" width="92" height="152.33333333333337"/>
+                                        <rect key="frame" x="150.66666666666666" y="524" width="92" height="142"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -100,7 +117,8 @@
                             <constraint firstItem="d9a-mN-pW6" firstAttribute="leading" secondItem="Ytz-kq-gKW" secondAttribute="leading" id="uF0-1e-c3F"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mmU-Ik-GSw"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" selectedImage="gear" id="81Q-T1-vWU"/>
+                    <navigationItem key="navigationItem" id="5xn-TC-K4j"/>
                     <connections>
                         <outlet property="heightLabel" destination="e5c-3I-ylB" id="lZM-oM-3kg"/>
                         <outlet property="loader" destination="9d8-vT-O2C" id="jpO-Ly-6r0"/>
@@ -110,28 +128,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qvg-B6-QsM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1970" y="-35"/>
+            <point key="canvasLocation" x="3822.1374045801526" y="-35.211267605633807"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="W2s-fS-bvW">
+        <!--Tab Bar Controller-->
+        <scene sceneID="kuf-GV-FIL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gcq-na-ILU" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JI7-gI-HjB" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v4q-CL-KY6">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UXB-dK-yj6">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eQf-Nj-02p" kind="relationship" relationship="viewControllers" id="ohX-jv-FK5"/>
+                        <segue destination="hpB-sY-2z5" kind="relationship" relationship="viewControllers" id="532-hs-rH2"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vaY-BO-MVY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1257" y="-35"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="cWo-Tj-CVO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eQf-Nj-02p" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" selectedImage="house.fill" id="t6l-mL-mXy"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qO3-fs-h8T">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sCF-d9-sAC"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="j9d-xN-IUR"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lZR-4C-2Xe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7kW-Fy-MEq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="2087.7862595419847" y="-35.211267605633807"/>
         </scene>
     </scenes>
     <resources>
+        <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
