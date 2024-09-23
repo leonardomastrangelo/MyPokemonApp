@@ -8,8 +8,8 @@ struct PokemonManager {
     
     var delegate: PokemonManagerDelegate?
     
-    func fetchPokemonList() {
-        performRequest(urlString: "\(Constants.Network.baseUrl)?limit=\(Constants.Network.limit)")
+    func fetchPokemonList(offset: Int) {
+        performRequest(urlString: "\(Constants.Network.baseUrl)?limit=\(Constants.Network.limit)&offset=\(offset)")
     }
     
     func fetchPokemonByName(pokemonName: String, completion: @escaping (PokemonData?) -> Void) {
