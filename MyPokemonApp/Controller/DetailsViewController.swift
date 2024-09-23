@@ -2,9 +2,7 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    var id: Int?
-    var pokemon: PokemonData?
-    var pokemonManager = PokemonManager()
+    var pokemon: PokemonData? 
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
@@ -19,19 +17,13 @@ class DetailsViewController: UIViewController {
         heightLabel.isHidden = true
         weightLabel.isHidden = true
         
-        pokemonManager.delegate = self
-        if let pokemonId = id {
-            pokemonManager.fetchPokemon(id: pokemonId)
+        if let pokemon = pokemon {
+            updateUI(with: pokemon)
         }
     }
-}
-
-//MARK: - PokemonManagerDelegate
-extension DetailsViewController: PokemonManagerDelegate {
     
-    func didUpdatePokemon(_ pokemonManager: PokemonManager, pokemon: PokemonData) {
+    private func updateUI(with pokemon: PokemonData) {
         DispatchQueue.main.async {
-            self.pokemon = pokemon
             self.nameLabel.text = pokemon.name
             self.heightLabel.text = "Height: \(pokemon.height ?? 0)m"
             self.weightLabel.text = "Weight: \(pokemon.weight ?? 0)Kg"
@@ -44,10 +36,12 @@ extension DetailsViewController: PokemonManagerDelegate {
             self.weightLabel.isHidden = false
         }
     }
+}
+
+//MARK: - PokemonManagerDelegate
+extension DetailsViewController: PokemonManagerDelegate {
     
-    // not used here
-    func didUpdatePokemonList(_ pokemonManager: PokemonManager, pokemonList: [PokemonData]) {
-    }
+    func didUpdatePokemonList(_ pokemonManager: PokemonManager, pokemonList: [PokemonData]) {}
     
     func didFailWithError(error: Error) {
         self.loader.stopAnimating()
