@@ -88,6 +88,7 @@ extension HomeViewController: UITableViewDataSource {
 
 // MARK: - Table View Actions
 extension HomeViewController: UITableViewDelegate {
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height

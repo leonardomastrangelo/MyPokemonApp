@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="3014.5038167938928" y="-35.211267605633807"/>
         </scene>
-        <!--Settings-->
+        <!--SettingsViewController-->
         <scene sceneID="b4w-oT-bEe">
             <objects>
-                <viewController id="hpB-sY-2z5" sceneMemberID="viewController">
+                <viewController id="hpB-sY-2z5" userLabel="SettingsViewController" customClass="SettingsViewController" customModule="MyPokemonApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8cO-8K-PQb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
