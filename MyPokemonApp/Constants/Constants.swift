@@ -5,8 +5,9 @@ struct Constants {
     static let appTitle = "PokemonApp"
     
     struct Network {
-        static let baseUrl = "https://pokeapi.co/api/v2/pokemon"
         static let limit = 20
+        static let maxRetryAttempts = 3
+        static let timeOutInterval = 30.0
     }
     
     struct TBView {

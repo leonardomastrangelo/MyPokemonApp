@@ -11,7 +11,7 @@ class PokemonManager {
     
     func fetchPokemonList(offset: Int) {
         let endpoint = PokemonAPI.getPokemonList(offset: offset, limit: Constants.Network.limit)
-        NetworkManager.shared.performRequest(endpoint: endpoint) { (result: Swift.Result<PokemonListData, NetworkError>) in
+        NetworkManager.shared.performRequestWithRetry(endpoint: endpoint) { (result: Swift.Result<PokemonListData, NetworkError>) in
             switch result {
             case .success(let pokemonListData):
                 let pokemonDataList = pokemonListData.results.map { result -> PokemonData in
@@ -26,7 +26,7 @@ class PokemonManager {
     
     func fetchPokemonByName(pokemonName: String, completion: @escaping (PokemonData?) -> Void) {
         let endpoint = PokemonAPI.getPokemonByName(name: pokemonName)
-        NetworkManager.shared.performRequest(endpoint: endpoint) { (result: Swift.Result<PokemonData, NetworkError>) in
+        NetworkManager.shared.performRequestWithRetry(endpoint: endpoint) { (result: Swift.Result<PokemonData, NetworkError>) in
             switch result {
             case .success(let pokemonData):
                 completion(pokemonData)
@@ -37,4 +37,5 @@ class PokemonManager {
         }
     }
 }
+
 
