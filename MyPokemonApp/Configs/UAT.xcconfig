@@ -1,0 +1,11 @@
+//
+//  UAT.xcconfig
+
+#include "Base.xcconfig"
+
+API_BASE_URL = http:/$()/my-uat-url.com
+API_KEY = my_super_secret_uat_api_key
+IS_PRODUCTION = NO
+ENV_NAME = uat
+PRODUCT_NAME = $(APP_NAME) $(ENV_NAME)
+PRODUCT_BUNDLE_IDENTIFIER = $(BASE_BUNDLE_IDENTIFIER).$(ENV_NAME)

@@ -14,6 +14,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        checkEnv()
+        
         appTitleLabel.text = Constants.appTitle
         tableView.dataSource = self
         tableView.delegate = self
@@ -28,17 +30,19 @@ class HomeViewController: UIViewController {
         pokemonManager.fetchPokemonList(offset: offset)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.TBView.homeToDetail {
-            if let detailVC = segue.destination as? DetailsViewController,
-               let indexPath = sender as? IndexPath {
-                let selectedPokemon = pokemonList[indexPath.row]
-                detailVC.pokemon = selectedPokemon
-            }
+}
+
+//MARK: - Check Environment
+extension HomeViewController {
+    func checkEnv() {
+        print("[IS PRODUCTION?] -> \(Environment.isProduction)")
+        print("[CURRENT ENV] -> \(Environment.envName)")
+        if Environment.isProduction == "NO" {
+            print("[API BASE URL] -> \(Environment.apiBaseUrl)")
+            print("[API KEY] -> \(Environment.apiKey)")
         }
     }
 }
-
 
 // MARK: - Retrieving Pokemon List
 extension HomeViewController: PokemonManagerDelegate {
@@ -108,4 +112,15 @@ extension HomeViewController: UITableViewDelegate {
     }
 }
 
-
+//MARK: - Navigation
+extension HomeViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.TBView.homeToDetail {
+            if let detailVC = segue.destination as? DetailsViewController,
+               let indexPath = sender as? IndexPath {
+                let selectedPokemon = pokemonList[indexPath.row]
+                detailVC.pokemon = selectedPokemon
+            }
+        }
+    }
+}

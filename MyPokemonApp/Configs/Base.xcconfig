@@ -1,0 +1,12 @@
+//
+//  Base.xcconfig
+
+APP_NAME = MyPokemonApp
+BASE_BUNDLE_IDENTIFIER = co.leomastrangelo.MyPokemonApp
+
+// app icon
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
+// app version
+MARKETING_VERSION = 1.0.0
+// build number
+CURRENT_PROJECT_VERSION = 1

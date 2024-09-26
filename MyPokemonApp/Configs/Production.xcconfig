@@ -1,0 +1,11 @@
+//
+//  Production.xcconfig
+
+#include "Base.xcconfig"
+
+API_BASE_URL = http:/$()/my-production-url.com
+API_KEY = my_super_secret_production_api_key
+IS_PRODUCTION = YES
+ENV_NAME = production
+PRODUCT_NAME = $(APP_NAME) $(ENV_NAME)
+PRODUCT_BUNDLE_IDENTIFIER = $(BASE_BUNDLE_IDENTIFIER).$(ENV_NAME)
