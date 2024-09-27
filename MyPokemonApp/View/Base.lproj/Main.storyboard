@@ -11,7 +11,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Home View Controller" customClass="HomeViewController" customModule="MyPokemonApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Home View Controller" customClass="HomeViewController" customModule="MyPokemonApp_production" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,14 +60,85 @@
         <!--SettingsViewController-->
         <scene sceneID="b4w-oT-bEe">
             <objects>
-                <viewController id="hpB-sY-2z5" userLabel="SettingsViewController" customClass="SettingsViewController" customModule="MyPokemonApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hpB-sY-2z5" userLabel="SettingsViewController" customClass="SettingsViewController" customModule="MyPokemonApp_production" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8cO-8K-PQb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HW8-LV-b0w">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-4k-lBl">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Ke3-3h-Kfm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selection Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PJ-lw-5og">
+                                        <rect key="frame" x="0.0" y="120" width="393" height="450"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7IA-Ec-0Nw">
+                                        <rect key="frame" x="0.0" y="590" width="393" height="120"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74q-jJ-CJ0" userLabel="En">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="6BS-qw-dee"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="englishPressed:" destination="hpB-sY-2z5" eventType="touchUpInside" id="AiW-Oo-FO2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cO1-gw-LX8" userLabel="It">
+                                                <rect key="frame" x="0.0" y="70" width="393" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Dcu-Wi-3Kb"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="italianPressed:" destination="hpB-sY-2z5" eventType="touchUpInside" id="0gT-2v-0VW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="EPb-4k-lBl" secondAttribute="trailing" id="AAY-2T-iHW"/>
+                                    <constraint firstItem="EPb-4k-lBl" firstAttribute="leading" secondItem="HW8-LV-b0w" secondAttribute="leading" id="Eha-eA-Ghd"/>
+                                    <constraint firstItem="9PJ-lw-5og" firstAttribute="leading" secondItem="HW8-LV-b0w" secondAttribute="leading" id="GwB-2i-yfX"/>
+                                    <constraint firstAttribute="trailing" secondItem="9PJ-lw-5og" secondAttribute="trailing" id="HJg-4s-lcn"/>
+                                    <constraint firstAttribute="bottom" secondItem="7IA-Ec-0Nw" secondAttribute="bottom" id="IJ8-Dh-1XB"/>
+                                    <constraint firstAttribute="trailing" secondItem="7IA-Ec-0Nw" secondAttribute="trailing" id="Kql-PC-Qsp"/>
+                                    <constraint firstItem="EPb-4k-lBl" firstAttribute="top" secondItem="HW8-LV-b0w" secondAttribute="top" id="XZ6-jp-yT2"/>
+                                    <constraint firstItem="7IA-Ec-0Nw" firstAttribute="leading" secondItem="HW8-LV-b0w" secondAttribute="leading" id="r8v-9T-sSg"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ZVu-Iv-xZA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZVu-Iv-xZA" firstAttribute="trailing" secondItem="HW8-LV-b0w" secondAttribute="trailing" id="B8y-0V-4IE"/>
+                            <constraint firstItem="ZVu-Iv-xZA" firstAttribute="bottom" secondItem="HW8-LV-b0w" secondAttribute="bottom" id="Xgy-gD-0uR"/>
+                            <constraint firstItem="HW8-LV-b0w" firstAttribute="top" secondItem="ZVu-Iv-xZA" secondAttribute="top" id="prk-qE-9SI"/>
+                            <constraint firstItem="HW8-LV-b0w" firstAttribute="leading" secondItem="ZVu-Iv-xZA" secondAttribute="leading" id="vYb-eS-b0U"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" selectedImage="gear" id="OEs-9i-Svb"/>
+                    <connections>
+                        <outlet property="englishLabel" destination="74q-jJ-CJ0" id="kMS-Wr-yi0"/>
+                        <outlet property="italianLabel" destination="cO1-gw-LX8" id="ifZ-hc-AJu"/>
+                        <outlet property="selectionLabel" destination="9PJ-lw-5og" id="iRT-xt-csN"/>
+                        <outlet property="titleLabel" destination="EPb-4k-lBl" id="bQh-Pn-dnM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVE-7t-Hmq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,7 +147,7 @@
         <!--Details View Controller-->
         <scene sceneID="6LO-EF-0gY">
             <objects>
-                <viewController id="aw1-jZ-WNK" userLabel="Details View Controller" customClass="DetailsViewController" customModule="MyPokemonApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aw1-jZ-WNK" userLabel="Details View Controller" customClass="DetailsViewController" customModule="MyPokemonApp_production" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pzk-jX-7he">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,10 +201,10 @@
             </objects>
             <point key="canvasLocation" x="3822.1374045801526" y="-35.211267605633807"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="kuf-GV-FIL">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JI7-gI-HjB" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JI7-gI-HjB" customClass="CustomTabBarController" customModule="MyPokemonApp_production" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UXB-dK-yj6">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

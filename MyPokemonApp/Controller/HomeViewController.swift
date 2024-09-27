@@ -14,15 +14,25 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        checkEnv()
+        checkSettings()
         
-        appTitleLabel.text = Constants.appTitle
+        appTitleLabel.text = "title".translated()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: Constants.TBView.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.cellIdentifier)
         
         pokemonManager.delegate = self
         loadPokemonData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshLanguage()
+    }
+    
+    func refreshLanguage() {
+        appTitleLabel.text = "title".translated()
+        tableView.reloadData()
     }
     
     func loadPokemonData() {
@@ -32,9 +42,9 @@ class HomeViewController: UIViewController {
     
 }
 
-//MARK: - Check Environment
+//MARK: - Check Settings
 extension HomeViewController {
-    func checkEnv() {
+    func checkSettings() {
         print("[IS PRODUCTION?] -> \(Environment.isProduction)")
         print("[CURRENT ENV] -> \(Environment.envName)")
         if Environment.isProduction == "NO" {
@@ -84,7 +94,7 @@ extension HomeViewController: UITableViewDataSource {
         let pokemonListItem = pokemonList[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.cellIdentifier, for: indexPath) as! PokemonCell
-        cell.label.text = "\(pokemonListItem.name) - height: \(pokemonListItem.height ?? 0) - weight: \(pokemonListItem.weight ?? 0)"
+        cell.label.text = "\(pokemonListItem.name.uppercased()) - \("Height".translated()): \(pokemonListItem.height ?? 0)m - \("Weight".translated()): \(pokemonListItem.weight ?? 0)Kg"
         
         return cell
     }
@@ -120,6 +130,8 @@ extension HomeViewController {
                let indexPath = sender as? IndexPath {
                 let selectedPokemon = pokemonList[indexPath.row]
                 detailVC.pokemon = selectedPokemon
+                
+                updateBackButtonTitle()
             }
         }
     }

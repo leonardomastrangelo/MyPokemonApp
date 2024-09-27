@@ -1,0 +1,39 @@
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "74q-jJ-CJ0"; */
+"74q-jJ-CJ0.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "74q-jJ-CJ0"; */
+"74q-jJ-CJ0.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "81Q-T1-vWU"; */
+"81Q-T1-vWU.title" = "Settings";
+
+/* Class = "UILabel"; text = "Selection Label"; ObjectID = "9PJ-lw-5og"; */
+"9PJ-lw-5og.text" = "Selection Label";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "EPb-4k-lBl"; */
+"EPb-4k-lBl.text" = "Title";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Evb-kO-hST"; */
+"Evb-kO-hST.text" = "Name";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "OEs-9i-Svb"; */
+"OEs-9i-Svb.title" = "Settings";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "VdV-Bo-NYd"; */
+"VdV-Bo-NYd.text" = "Title";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "cO1-gw-LX8"; */
+"cO1-gw-LX8.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cO1-gw-LX8"; */
+"cO1-gw-LX8.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Height"; ObjectID = "e5c-3I-ylB"; */
+"e5c-3I-ylB.text" = "Height";
+
+/* Class = "UILabel"; text = "Weight"; ObjectID = "erZ-no-OBK"; */
+"erZ-no-OBK.text" = "Weight";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "t6l-mL-mXy"; */
+"t6l-mL-mXy.title" = "Home";

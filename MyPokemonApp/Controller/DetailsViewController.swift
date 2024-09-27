@@ -2,7 +2,7 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    var pokemon: PokemonData? 
+    var pokemon: PokemonData?
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
@@ -22,11 +22,18 @@ class DetailsViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let pokemon = pokemon {
+            updateUI(with: pokemon)
+        }
+    }
+    
     private func updateUI(with pokemon: PokemonData) {
         DispatchQueue.main.async {
-            self.nameLabel.text = pokemon.name
-            self.heightLabel.text = "Height: \(pokemon.height ?? 0)m"
-            self.weightLabel.text = "Weight: \(pokemon.weight ?? 0)Kg"
+            self.nameLabel.text = pokemon.name.uppercased()
+            self.heightLabel.text = "\("Height".translated()): \(pokemon.height ?? 0)m"
+            self.weightLabel.text = "\("Weight".translated()): \(pokemon.weight ?? 0)Kg"
             
             self.loader.stopAnimating()
             self.loader.isHidden = true
