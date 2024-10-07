@@ -3,7 +3,7 @@
 
 #include "Base.xcconfig"
 
-API_BASE_URL = http:/$()/my-staging-url.com
+API_BASE_URL = https:/$()/my-staging-url.com
 API_KEY = my_super_secret_staging_api_key
 IS_PRODUCTION = NO
 ENV_NAME = staging

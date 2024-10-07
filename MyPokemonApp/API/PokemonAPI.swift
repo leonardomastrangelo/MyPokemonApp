@@ -7,9 +7,9 @@ enum PokemonAPI: Endpoint {
     var path: String {
         switch self {
         case .getPokemonList:
-            return "/pokemon"
+            return "/api/v2/pokemon"
         case .getPokemonByName(let name):
-            return "/pokemon/\(name)"
+            return "/api/v2/pokemon/\(name)"
         }
     }
     
@@ -26,6 +26,10 @@ enum PokemonAPI: Endpoint {
     }
     
     var method: HTTPMethod {
-        return .get
+        switch self {
+        case .getPokemonList, .getPokemonByName:
+            return .get
+        }
     }
+    
 }

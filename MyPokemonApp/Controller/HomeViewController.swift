@@ -16,13 +16,17 @@ class HomeViewController: UIViewController {
         
         checkSettings()
         
-        appTitleLabel.text = "title".translated()
+        appTitleLabel.font = UIFont.customFont(ofSize: 35)
+        appTitleLabel.text = "Title".translated()
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: Constants.TBView.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.cellIdentifier)
+        addTableViewDetails()
         
         pokemonManager.delegate = self
         loadPokemonData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +35,7 @@ class HomeViewController: UIViewController {
     }
     
     func refreshLanguage() {
-        appTitleLabel.text = "title".translated()
+        appTitleLabel.text = "Title".translated()
         tableView.reloadData()
     }
     
@@ -59,17 +63,20 @@ extension HomeViewController: PokemonManagerDelegate {
     func didUpdatePokemonList(_ pokemonManager: PokemonManager, pokemonList: [PokemonData]) {
         let dispatchGroup = DispatchGroup()
         
+        var detailedPokemonList: [PokemonData] = []
+        
         for pokemon in pokemonList {
             dispatchGroup.enter()
             pokemonManager.fetchPokemonByName(pokemonName: pokemon.name) { detailedPokemon in
                 if let detailedPokemon = detailedPokemon {
-                    self.pokemonList.append(detailedPokemon)
+                    detailedPokemonList.append(detailedPokemon)
                 }
                 dispatchGroup.leave()
             }
         }
         
         dispatchGroup.notify(queue: .main) {
+            self.pokemonList += detailedPokemonList.sorted(by: { $0.id ?? 0 < $1.id ?? 0 })
             self.offset += Constants.Network.limit
             self.isLoading = false
             self.tableView.reloadData()
@@ -94,9 +101,23 @@ extension HomeViewController: UITableViewDataSource {
         let pokemonListItem = pokemonList[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.cellIdentifier, for: indexPath) as! PokemonCell
-        cell.label.text = "\(pokemonListItem.name.uppercased()) - \("Height".translated()): \(pokemonListItem.height ?? 0)m - \("Weight".translated()): \(pokemonListItem.weight ?? 0)Kg"
+        
+        cell.backgroundColor = UIColor.clear
+        
+        cell.label.text = "N°\(String(format: "%03d", pokemonListItem.id ?? 0))"
+        cell.labelName.text = pokemonListItem.name.uppercased()
         
         return cell
+    }
+}
+
+//MARK: - Table View Layout
+extension HomeViewController {
+    func addTableViewDetails() {
+        tableView.layer.cornerRadius = 10
+        tableView.backgroundColor = UIColor.systemYellow
+        tableView.layer.borderWidth = 3
+        tableView.layer.borderColor = CGColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
     }
 }
 

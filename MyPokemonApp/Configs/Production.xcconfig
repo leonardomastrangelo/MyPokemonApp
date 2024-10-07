@@ -3,7 +3,7 @@
 
 #include "Base.xcconfig"
 
-API_BASE_URL = http:/$()/my-production-url.com
+API_BASE_URL = https:/$()/my-production-url.com
 API_KEY = my_super_secret_production_api_key
 IS_PRODUCTION = YES
 ENV_NAME = production

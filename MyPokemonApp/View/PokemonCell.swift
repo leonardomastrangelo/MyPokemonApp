@@ -9,10 +9,14 @@ import UIKit
 
 class PokemonCell: UITableViewCell {
 
+    @IBOutlet weak var pokeball: UIImageView!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var labelName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        label.font = UIFont.customFont(ofSize: 20)
+        labelName.font = UIFont.customFont(ofSize: 20)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

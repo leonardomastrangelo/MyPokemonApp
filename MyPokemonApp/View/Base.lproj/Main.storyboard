@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="e7s-SX-NvL">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CDV-4G-E3p">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <subviews>
@@ -25,14 +28,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SlZ-MA-0Qq">
-                                        <rect key="frame" x="0.0" y="68" width="393" height="598"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SlZ-MA-0Qq">
+                                        <rect key="frame" x="20" y="68" width="353" height="598"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                                     </tableView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="SlZ-MA-0Qq" secondAttribute="trailing" id="GhB-gE-xHk"/>
-                                    <constraint firstItem="SlZ-MA-0Qq" firstAttribute="leading" secondItem="CDV-4G-E3p" secondAttribute="leading" id="pqQ-UI-Isc"/>
+                                    <constraint firstAttribute="trailing" secondItem="SlZ-MA-0Qq" secondAttribute="trailing" constant="20" id="GhB-gE-xHk"/>
+                                    <constraint firstItem="SlZ-MA-0Qq" firstAttribute="leading" secondItem="CDV-4G-E3p" secondAttribute="leading" constant="20" id="pqQ-UI-Isc"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -40,9 +43,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="CDV-4G-E3p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="60Y-Xu-PKn"/>
-                            <constraint firstAttribute="trailing" secondItem="CDV-4G-E3p" secondAttribute="trailing" id="7kT-S2-TgN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CDV-4G-E3p" secondAttribute="trailing" id="7kT-S2-TgN"/>
+                            <constraint firstItem="e7s-SX-NvL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8gD-hM-sz5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e7s-SX-NvL" secondAttribute="trailing" id="CTH-my-cdP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CDV-4G-E3p" secondAttribute="bottom" id="RYF-16-pFI"/>
                             <constraint firstItem="CDV-4G-E3p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ULd-Mk-KYf"/>
+                            <constraint firstAttribute="bottom" secondItem="e7s-SX-NvL" secondAttribute="bottom" id="bmQ-gD-lky"/>
+                            <constraint firstItem="e7s-SX-NvL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fyS-q5-oyf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JUz-li-ytp"/>
@@ -241,10 +248,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="HomeBackground" width="188" height="372.66665649414062"/>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

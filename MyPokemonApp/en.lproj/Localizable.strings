@@ -1,7 +1,7 @@
 // en
 
-"title" = "My Poke App";
-"select language" = "Select language";
+"Title" = "PokedApp";
+"Select language" = "Select language";
 "Settings" = "Settings";
 "Home" = "Home";
 "Name" = "Name";

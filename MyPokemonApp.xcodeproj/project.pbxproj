@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		132C1BDE2CA1B57E0058D62E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132C1BDD2CA1B57E0058D62E /* SettingsViewController.swift */; };
+		134811A42CB3CC3800CC5C66 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134811A32CB3CC3800CC5C66 /* String+Extension.swift */; };
+		134811A62CB3E28C00CC5C66 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134811A52CB3E28C00CC5C66 /* Interceptor.swift */; };
+		134811A82CB3E2CA00CC5C66 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134811A72CB3E2CA00CC5C66 /* EventMonitor.swift */; };
+		134811AA2CB3F71800CC5C66 /* PixelifySans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 134811A92CB3F71800CC5C66 /* PixelifySans-Regular.ttf */; };
+		134811AC2CB3F98A00CC5C66 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134811AB2CB3F98A00CC5C66 /* UIFont+Custom.swift */; };
 		138215442C9824CD00076C1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138215432C9824CD00076C1C /* AppDelegate.swift */; };
 		138215462C9824CD00076C1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138215452C9824CD00076C1C /* SceneDelegate.swift */; };
 		138215482C9824CD00076C1C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138215472C9824CD00076C1C /* HomeViewController.swift */; };
@@ -56,6 +61,11 @@
 		1318714D2CA5A43C00AA9187 /* MyPokemonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPokemonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1318715C2CA5A44C00AA9187 /* MyPokemonAppUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPokemonAppUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		132C1BDD2CA1B57E0058D62E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		134811A32CB3CC3800CC5C66 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		134811A52CB3E28C00CC5C66 /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
+		134811A72CB3E2CA00CC5C66 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		134811A92CB3F71800CC5C66 /* PixelifySans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PixelifySans-Regular.ttf"; sourceTree = "<group>"; };
+		134811AB2CB3F98A00CC5C66 /* UIFont+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Custom.swift"; sourceTree = "<group>"; };
 		138215402C9824CD00076C1C /* MyPokemonApp staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyPokemonApp staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		138215432C9824CD00076C1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		138215452C9824CD00076C1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +127,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		134811A22CB3CC0B00CC5C66 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				134811A32CB3CC3800CC5C66 /* String+Extension.swift */,
+				134811AB2CB3F98A00CC5C66 /* UIFont+Custom.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		138215372C9824CD00076C1C = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +159,7 @@
 		138215422C9824CD00076C1C /* MyPokemonApp */ = {
 			isa = PBXGroup;
 			children = (
+				134811A22CB3CC0B00CC5C66 /* Extensions */,
 				139A2B0A2CA6E8F8006B0E17 /* Utilities */,
 				13ED8FD22CA5A5F000D2AD66 /* Configs */,
 				13956F172CA2F38F00EAEA17 /* API */,
@@ -153,6 +173,7 @@
 				1382154E2C9824CF00076C1C /* LaunchScreen.storyboard */,
 				138215512C9824CF00076C1C /* Info.plist */,
 				139A2B062CA6AD07006B0E17 /* Localizable.strings */,
+				134811A92CB3F71800CC5C66 /* PixelifySans-Regular.ttf */,
 			);
 			path = MyPokemonApp;
 			sourceTree = "<group>";
@@ -202,6 +223,8 @@
 				13956F192CA2F3C100EAEA17 /* Endpoint.swift */,
 				13956F1B2CA2F4ED00EAEA17 /* PokemonAPI.swift */,
 				13956F222CA2F94300EAEA17 /* Manager */,
+				134811A52CB3E28C00CC5C66 /* Interceptor.swift */,
+				134811A72CB3E2CA00CC5C66 /* EventMonitor.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -370,6 +393,7 @@
 				138215502C9824CF00076C1C /* Base in Resources */,
 				139A2B082CA6AD07006B0E17 /* Localizable.strings in Resources */,
 				13ED8FD62CA5A64600D2AD66 /* UAT.xcconfig in Resources */,
+				134811AA2CB3F71800CC5C66 /* PixelifySans-Regular.ttf in Resources */,
 				13ED8FD42CA5A63200D2AD66 /* Staging.xcconfig in Resources */,
 				1382154B2C9824CD00076C1C /* Base in Resources */,
 				13ED8FDA2CA5A6BD00D2AD66 /* Base.xcconfig in Resources */,
@@ -398,15 +422,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				139A2B0E2CA6ED51006B0E17 /* NavigatorHelper.swift in Sources */,
+				134811AC2CB3F98A00CC5C66 /* UIFont+Custom.swift in Sources */,
 				138215482C9824CD00076C1C /* HomeViewController.swift in Sources */,
 				138215642C9839C900076C1C /* PokemonData.swift in Sources */,
 				138215602C9838C600076C1C /* PokemonListData.swift in Sources */,
 				132C1BDE2CA1B57E0058D62E /* SettingsViewController.swift in Sources */,
 				13ED8FDC2CA5AE5F00D2AD66 /* Environment.swift in Sources */,
+				134811A62CB3E28C00CC5C66 /* Interceptor.swift in Sources */,
 				1382156C2C983AE800076C1C /* PokemonManager.swift in Sources */,
 				139A2B102CA6F147006B0E17 /* CustomTabBarController.swift in Sources */,
 				138215752C9845A800076C1C /* PokemonCell.swift in Sources */,
 				1382155C2C982F1400076C1C /* Constants.swift in Sources */,
+				134811A82CB3E2CA00CC5C66 /* EventMonitor.swift in Sources */,
+				134811A42CB3CC3800CC5C66 /* String+Extension.swift in Sources */,
 				13956F1F2CA2F53800EAEA17 /* HTTP.swift in Sources */,
 				138215442C9824CD00076C1C /* AppDelegate.swift in Sources */,
 				138215462C9824CD00076C1C /* SceneDelegate.swift in Sources */,

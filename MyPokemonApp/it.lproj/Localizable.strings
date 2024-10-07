@@ -1,7 +1,7 @@
 // it
 
-"title" = "La Mia Poke App";
-"select language" = "Seleziona Lingua";
+"Title" = "PokedApp";
+"Select language" = "Seleziona Lingua";
 "Settings" = "Impostazioni";
 "Home" = "Home";
 "Name" = "Nome";

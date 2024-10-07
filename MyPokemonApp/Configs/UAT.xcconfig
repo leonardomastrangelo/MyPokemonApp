@@ -3,7 +3,7 @@
 
 #include "Base.xcconfig"
 
-API_BASE_URL = http:/$()/my-uat-url.com
+API_BASE_URL = https:/$()/my-uat-url.com
 API_KEY = my_super_secret_uat_api_key
 IS_PRODUCTION = NO
 ENV_NAME = uat

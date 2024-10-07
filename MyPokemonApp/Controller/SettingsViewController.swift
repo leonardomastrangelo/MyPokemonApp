@@ -13,8 +13,8 @@ class SettingsViewController: UIViewController {
     }
     
     func refreshLanguage() {
-        titleLabel.text = "title".translated()
-        selectionLabel.text = "select language".translated()
+        titleLabel.text = "Title".translated()
+        selectionLabel.text = "Select language".translated()
         englishLabel.setTitle("English".translated(), for: .normal)
         italianLabel.setTitle("Italian".translated(), for: .normal)
     }
