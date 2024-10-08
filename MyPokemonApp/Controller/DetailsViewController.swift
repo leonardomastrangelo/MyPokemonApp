@@ -4,6 +4,8 @@ class DetailsViewController: UIViewController {
     
     var pokemon: PokemonData?
     
+    @IBOutlet weak var detailsBackgroundImage: UIImageView!
+    
     @IBOutlet weak var nameStackView: UIStackView!
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -32,6 +34,9 @@ class DetailsViewController: UIViewController {
         if let pokemon = pokemon {
             applyStyle()
             updateUI(with: pokemon)
+            if let imageUrlString = pokemon.sprites?.front_default, let imageUrl = URL(string: imageUrlString) {
+                self.loadImage(from: imageUrl)
+            }
         }
     }
     
@@ -39,6 +44,17 @@ class DetailsViewController: UIViewController {
         super.viewWillAppear(animated)
         if let pokemon = pokemon {
             updateUI(with: pokemon)
+        }
+        applyTheme()
+    }
+    
+    private func applyTheme() {
+        let isDarkMode = UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey)
+        
+        if isDarkMode {
+            detailsBackgroundImage.image = UIImage(named: Constants.Images.darkDetailsBackground)
+        } else {
+            detailsBackgroundImage.image = UIImage(named: Constants.Images.lightDetailsBackground)
         }
     }
     
@@ -65,9 +81,6 @@ class DetailsViewController: UIViewController {
             self.weightLabelText.text = "Weight".translated()
             self.weightLabel.text = "\(pokemon.weight ?? 0)Kg"
             
-            if let imageUrlString = pokemon.sprites?.front_default, let imageUrl = URL(string: imageUrlString) {
-                self.loadImage(from: imageUrl)
-            }
         }
     }
     
@@ -79,40 +92,40 @@ class DetailsViewController: UIViewController {
     }
     
     private func applyNameStackViewLayerRules() {
-        self.nameStackView.layer.cornerRadius = 10
+        self.nameStackView.layer.cornerRadius = Constants.Sizes.pokeCornerRadius
         self.nameStackView.backgroundColor = UIColor.systemYellow
         self.nameStackView.isLayoutMarginsRelativeArrangement = true
-        self.nameStackView.layoutMargins = UIEdgeInsets(top: 20, left: 15, bottom: 20, right: 15)
-        self.nameStackView.layer.borderWidth = 3
-        self.nameStackView.layer.borderColor = CGColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
+        self.nameStackView.layoutMargins = Constants.Sizes.pokeLayoutMargins
+        self.nameStackView.layer.borderWidth = Constants.Sizes.pokeBorderWidth
+        self.nameStackView.layer.borderColor = Constants.PokeColors.pokeGray
     }
     
     private func applyDetailsStackViewLayerRules() {
-        self.detailsStackView.layer.cornerRadius = 10
+        self.detailsStackView.layer.cornerRadius = Constants.Sizes.pokeCornerRadius
         self.detailsStackView.backgroundColor = UIColor.systemGreen
         self.detailsStackView.isLayoutMarginsRelativeArrangement = true
-        self.detailsStackView.layoutMargins = UIEdgeInsets(top: 20, left: 15, bottom: 20, right: 15)
-        self.detailsStackView.layer.borderWidth = 3
-        self.detailsStackView.layer.borderColor = CGColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
+        self.detailsStackView.layoutMargins = Constants.Sizes.pokeLayoutMargins
+        self.detailsStackView.layer.borderWidth = Constants.Sizes.pokeBorderWidth
+        self.detailsStackView.layer.borderColor = Constants.PokeColors.pokeGray
     }
     
     private func applyFont() {
-        self.nameLabel.font = UIFont.customFont(ofSize: 30)
-
-        self.numberLabelText.font = UIFont.customFont(ofSize: 22)
-        self.numberLabel.font = UIFont.customFont(ofSize: 19)
+        self.nameLabel.font = UIFont.customFont(ofSize: Constants.FontSizes.f30)
         
-        self.nameLabelText.font = UIFont.customFont(ofSize: 22)
-        self.nameLabelPokemon.font = UIFont.customFont(ofSize: 19)
+        self.numberLabelText.font = UIFont.customFont(ofSize: Constants.FontSizes.f22)
+        self.numberLabel.font = UIFont.customFont(ofSize: Constants.FontSizes.f19)
         
-        self.typeLabelText.font = UIFont.customFont(ofSize: 22)
-        self.typeLabel.font = UIFont.customFont(ofSize: 19)
+        self.nameLabelText.font = UIFont.customFont(ofSize: Constants.FontSizes.f22)
+        self.nameLabelPokemon.font = UIFont.customFont(ofSize: Constants.FontSizes.f19)
         
-        self.heightLabelText.font = UIFont.customFont(ofSize: 22)
-        self.heightLabel.font = UIFont.customFont(ofSize: 19)
+        self.typeLabelText.font = UIFont.customFont(ofSize: Constants.FontSizes.f22)
+        self.typeLabel.font = UIFont.customFont(ofSize: Constants.FontSizes.f19)
         
-        self.weightLabelText.font = UIFont.customFont(ofSize: 22)
-        self.weightLabel.font = UIFont.customFont(ofSize: 19)
+        self.heightLabelText.font = UIFont.customFont(ofSize: Constants.FontSizes.f22)
+        self.heightLabel.font = UIFont.customFont(ofSize: Constants.FontSizes.f19)
+        
+        self.weightLabelText.font = UIFont.customFont(ofSize: Constants.FontSizes.f22)
+        self.weightLabel.font = UIFont.customFont(ofSize: Constants.FontSizes.f19)
     }
     
     private func loadImage(from url: URL) {

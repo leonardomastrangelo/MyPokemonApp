@@ -33,6 +33,7 @@
 		139A2B082CA6AD07006B0E17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 139A2B062CA6AD07006B0E17 /* Localizable.strings */; };
 		139A2B0E2CA6ED51006B0E17 /* NavigatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139A2B0D2CA6ED51006B0E17 /* NavigatorHelper.swift */; };
 		139A2B102CA6F147006B0E17 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139A2B0F2CA6F147006B0E17 /* CustomTabBarController.swift */; };
+		13AC0FA62CB56E76001A5C37 /* LanguageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC0FA52CB56E76001A5C37 /* LanguageSelectionViewController.swift */; };
 		13ED8FD42CA5A63200D2AD66 /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 13ED8FD32CA5A63200D2AD66 /* Staging.xcconfig */; };
 		13ED8FD62CA5A64600D2AD66 /* UAT.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 13ED8FD52CA5A64600D2AD66 /* UAT.xcconfig */; };
 		13ED8FD82CA5A65600D2AD66 /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 13ED8FD72CA5A65600D2AD66 /* Production.xcconfig */; };
@@ -90,6 +91,7 @@
 		139A2B092CA6AD19006B0E17 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		139A2B0D2CA6ED51006B0E17 /* NavigatorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorHelper.swift; sourceTree = "<group>"; };
 		139A2B0F2CA6F147006B0E17 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		13AC0FA52CB56E76001A5C37 /* LanguageSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionViewController.swift; sourceTree = "<group>"; };
 		13ED8FD32CA5A63200D2AD66 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		13ED8FD52CA5A64600D2AD66 /* UAT.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = UAT.xcconfig; sourceTree = "<group>"; };
 		13ED8FD72CA5A65600D2AD66 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				1382155D2C9836ED00076C1C /* DetailsViewController.swift */,
 				132C1BDD2CA1B57E0058D62E /* SettingsViewController.swift */,
 				139A2B0F2CA6F147006B0E17 /* CustomTabBarController.swift */,
+				13AC0FA52CB56E76001A5C37 /* LanguageSelectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 			files = (
 				139A2B0E2CA6ED51006B0E17 /* NavigatorHelper.swift in Sources */,
 				134811AC2CB3F98A00CC5C66 /* UIFont+Custom.swift in Sources */,
+				13AC0FA62CB56E76001A5C37 /* LanguageSelectionViewController.swift in Sources */,
 				138215482C9824CD00076C1C /* HomeViewController.swift in Sources */,
 				138215642C9839C900076C1C /* PokemonData.swift in Sources */,
 				138215602C9838C600076C1C /* PokemonListData.swift in Sources */,

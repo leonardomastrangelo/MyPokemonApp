@@ -12,12 +12,8 @@ extension UIViewController  {
     }
 }
 
-// tableView o scroll view nella pagina di dettaglio -> buoysel image
-// pagina di dettaglio in verticale con più dati
-// immagine nel dettaglio page
 
 // mode -> automatico light dark - lingua -> lingue suppportate
-
 
 // scheda allenatore
 // splashScreen con pokeball

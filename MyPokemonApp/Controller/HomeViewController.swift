@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
         checkSettings()
         
         appTitleLabel.font = UIFont.customFont(ofSize: 35)
-        appTitleLabel.text = "Title".translated()
+        appTitleLabel.text = "Title".translated().uppercased()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -32,16 +32,42 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshLanguage()
+        let isDarkMode = UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey)
+        applyTheme(isDarkMode: isDarkMode)
     }
     
     func refreshLanguage() {
-        appTitleLabel.text = "Title".translated()
+        appTitleLabel.text = "Title".translated().uppercased()
         tableView.reloadData()
     }
     
     func loadPokemonData() {
         isLoading = true
         pokemonManager.fetchPokemonList(offset: offset)
+    }
+    
+    private func applyTheme(isDarkMode: Bool) {
+        if isDarkMode {
+            
+            tableView.backgroundColor = UIColor.black
+            tableView.separatorColor = UIColor.white
+            
+            tableView.visibleCells.forEach { cell in
+                if let pokemonCell = cell as? PokemonCell {
+                    pokemonCell.label.textColor = .white
+                    pokemonCell.labelName.textColor = .white
+                }
+            }
+        } else {
+            tableView.backgroundColor = UIColor.systemYellow
+            tableView.separatorColor = UIColor.black
+            
+            tableView.visibleCells.forEach { cell in
+                if let pokemonCell = cell as? PokemonCell {
+                    updateCellColors(cell: pokemonCell)
+                }
+            }
+        }
     }
     
 }
@@ -107,17 +133,31 @@ extension HomeViewController: UITableViewDataSource {
         cell.label.text = "N°\(String(format: "%03d", pokemonListItem.id ?? 0))"
         cell.labelName.text = pokemonListItem.name.uppercased()
         
+        updateCellColors(cell: cell)
+        
         return cell
+    }
+    
+    private func updateCellColors(cell: PokemonCell) {
+        let isDarkMode = UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey)
+        
+        if isDarkMode {
+            cell.label.textColor = .white
+            cell.labelName.textColor = .white
+        } else {
+            cell.label.textColor = .black
+            cell.labelName.textColor = .black
+        }
     }
 }
 
 //MARK: - Table View Layout
 extension HomeViewController {
     func addTableViewDetails() {
-        tableView.layer.cornerRadius = 10
+        tableView.layer.cornerRadius = Constants.Sizes.pokeCornerRadius
         tableView.backgroundColor = UIColor.systemYellow
-        tableView.layer.borderWidth = 3
-        tableView.layer.borderColor = CGColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
+        tableView.layer.borderWidth = Constants.Sizes.pokeBorderWidth
+        tableView.layer.borderColor = Constants.PokeColors.pokeGray
     }
 }
 
