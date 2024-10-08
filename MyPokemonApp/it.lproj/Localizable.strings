@@ -1,10 +1,12 @@
 // it
 
-"Title" = "PokedApp";
+"Title" = "PokédApp";
 "Select language" = "Seleziona Lingua";
 "Settings" = "Impostazioni";
 "Home" = "Home";
 "Name" = "Nome";
+"Pokédex Number" = "Numero Pokédex";
+"Type" = "Tipo";
 "Height" = "Altezza";
 "Weight" = "Peso";
 "English" = "Inglese";

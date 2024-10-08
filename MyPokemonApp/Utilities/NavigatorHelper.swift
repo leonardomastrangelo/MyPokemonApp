@@ -12,8 +12,6 @@ extension UIViewController  {
     }
 }
 
-// cella = pokeball, numero e nome (numero reale pokedex) -> pokedex image
-
 // tableView o scroll view nella pagina di dettaglio -> buoysel image
 // pagina di dettaglio in verticale con più dati
 // immagine nel dettaglio page

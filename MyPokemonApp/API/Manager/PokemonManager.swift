@@ -15,7 +15,7 @@ class PokemonManager {
             switch result {
             case .success(let pokemonListData):
                 let pokemonDataList = pokemonListData.results.map { result -> PokemonData in
-                    PokemonData(id: nil, name: result.name, height: nil, weight: nil)
+                    PokemonData(id: nil, name: result.name, height: nil, weight: nil, sprites: nil, types: nil)
                 }
                 self.delegate?.didUpdatePokemonList(self, pokemonList: pokemonDataList)
             case .failure(let error):
@@ -36,6 +36,7 @@ class PokemonManager {
             }
         }
     }
+    
 }
 
 
