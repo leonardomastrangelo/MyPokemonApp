@@ -7,6 +7,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var detailsBackgroundImage: UIImageView!
     
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +33,7 @@ class DetailsViewController: UIViewController {
     }
 }
 
-//MARK: - Theme And Table View Stylw
+//MARK: - Theme And Table View Style
 extension DetailsViewController {
     private func applyTheme() {
         let isDarkMode = UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey)
@@ -104,9 +105,9 @@ extension DetailsViewController: UITableViewDataSource {
             case 4:
                 if let types = pokemon.types {
                     let typeNames = types.map { $0.type.name }.joined(separator: ", ")
-                    cell.configure(titleText: "Types".translated(), detailText: typeNames)
+                    cell.configure(titleText: "Type".translated(), detailText: typeNames)
                 } else {
-                    cell.configure(titleText: "Types".translated(), detailText: "None")
+                    cell.configure(titleText: "Type".translated(), detailText: "None")
                 }
             default:
                 break

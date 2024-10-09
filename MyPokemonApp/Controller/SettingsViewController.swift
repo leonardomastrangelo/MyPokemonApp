@@ -51,7 +51,7 @@ extension SettingsViewController {
     }
 }
 
-// MARK: - Table View Building
+// MARK: - UITableViewDataSource
 extension SettingsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -86,7 +86,7 @@ extension SettingsViewController: UITableViewDataSource {
     }
 }
 
-//MARK: - Table View Actions
+//MARK: - UITableViewDelegate
 extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

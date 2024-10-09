@@ -26,7 +26,16 @@ class HomeViewController: UIViewController {
         applyTheme(isDarkMode: UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey))
     }
     
-    // MARK: - UI Setup
+    // MARK: - Data Fetching
+    private func loadPokemonData() {
+        guard !isLoading else { return }
+        isLoading = true
+        pokemonManager.fetchPokemonList(offset: offset)
+    }
+}
+
+//MARK: - UI Setup
+extension HomeViewController {
     private func setupUI() {
         configureAppTitle()
         configureTableView()
@@ -43,8 +52,10 @@ class HomeViewController: UIViewController {
         tableView.register(UINib(nibName: Constants.TBView.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.cellIdentifier)
         addTableViewDetails()
     }
-    
-    // MARK: - Language and Theme
+}
+
+//MARK: - Language And Theme
+extension HomeViewController {
     private func refreshLanguage() {
         appTitleLabel.text = "Title".translated().uppercased()
         tableView.reloadData()
@@ -62,13 +73,6 @@ class HomeViewController: UIViewController {
                 updateCellColors(cell: pokemonCell, isDarkMode: isDarkMode)
             }
         }
-    }
-    
-    // MARK: - Data Fetching
-    private func loadPokemonData() {
-        guard !isLoading else { return }
-        isLoading = true
-        pokemonManager.fetchPokemonList(offset: offset)
     }
 }
 
