@@ -33,7 +33,13 @@
 		139A2B082CA6AD07006B0E17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 139A2B062CA6AD07006B0E17 /* Localizable.strings */; };
 		139A2B0E2CA6ED51006B0E17 /* NavigatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139A2B0D2CA6ED51006B0E17 /* NavigatorHelper.swift */; };
 		139A2B102CA6F147006B0E17 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139A2B0F2CA6F147006B0E17 /* CustomTabBarController.swift */; };
+		13A7887B2CB675C9003148B5 /* SectionZeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A7887A2CB675C9003148B5 /* SectionZeroCell.xib */; };
+		13A7887C2CB675C9003148B5 /* SectionZeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A788792CB675C9003148B5 /* SectionZeroCell.swift */; };
+		13A7887F2CB675FC003148B5 /* SectionOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7887D2CB675FC003148B5 /* SectionOneCell.swift */; };
+		13A788802CB675FC003148B5 /* SectionOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A7887E2CB675FC003148B5 /* SectionOneCell.xib */; };
 		13AC0FA62CB56E76001A5C37 /* LanguageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC0FA52CB56E76001A5C37 /* LanguageSelectionViewController.swift */; };
+		13DF6C6B2CB67B0B002A5D2E /* SectionTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13DF6C6A2CB67B0B002A5D2E /* SectionTwoCell.xib */; };
+		13DF6C6C2CB67B0B002A5D2E /* SectionTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DF6C692CB67B0B002A5D2E /* SectionTwoCell.swift */; };
 		13ED8FD42CA5A63200D2AD66 /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 13ED8FD32CA5A63200D2AD66 /* Staging.xcconfig */; };
 		13ED8FD62CA5A64600D2AD66 /* UAT.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 13ED8FD52CA5A64600D2AD66 /* UAT.xcconfig */; };
 		13ED8FD82CA5A65600D2AD66 /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 13ED8FD72CA5A65600D2AD66 /* Production.xcconfig */; };
@@ -91,7 +97,13 @@
 		139A2B092CA6AD19006B0E17 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		139A2B0D2CA6ED51006B0E17 /* NavigatorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorHelper.swift; sourceTree = "<group>"; };
 		139A2B0F2CA6F147006B0E17 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		13A788792CB675C9003148B5 /* SectionZeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionZeroCell.swift; sourceTree = "<group>"; };
+		13A7887A2CB675C9003148B5 /* SectionZeroCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionZeroCell.xib; sourceTree = "<group>"; };
+		13A7887D2CB675FC003148B5 /* SectionOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOneCell.swift; sourceTree = "<group>"; };
+		13A7887E2CB675FC003148B5 /* SectionOneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionOneCell.xib; sourceTree = "<group>"; };
 		13AC0FA52CB56E76001A5C37 /* LanguageSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionViewController.swift; sourceTree = "<group>"; };
+		13DF6C692CB67B0B002A5D2E /* SectionTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTwoCell.swift; sourceTree = "<group>"; };
+		13DF6C6A2CB67B0B002A5D2E /* SectionTwoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionTwoCell.xib; sourceTree = "<group>"; };
 		13ED8FD32CA5A63200D2AD66 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		13ED8FD52CA5A64600D2AD66 /* UAT.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = UAT.xcconfig; sourceTree = "<group>"; };
 		13ED8FD72CA5A65600D2AD66 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
@@ -192,6 +204,7 @@
 		138215582C982EAE00076C1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				13A788782CB6758C003148B5 /* DetailCells */,
 				138215492C9824CD00076C1C /* Main.storyboard */,
 				138215732C9845A800076C1C /* PokemonCell.swift */,
 				138215742C9845A800076C1C /* PokemonCell.xib */,
@@ -247,6 +260,19 @@
 				139A2B0D2CA6ED51006B0E17 /* NavigatorHelper.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		13A788782CB6758C003148B5 /* DetailCells */ = {
+			isa = PBXGroup;
+			children = (
+				13A788792CB675C9003148B5 /* SectionZeroCell.swift */,
+				13A7887A2CB675C9003148B5 /* SectionZeroCell.xib */,
+				13A7887D2CB675FC003148B5 /* SectionOneCell.swift */,
+				13A7887E2CB675FC003148B5 /* SectionOneCell.xib */,
+				13DF6C692CB67B0B002A5D2E /* SectionTwoCell.swift */,
+				13DF6C6A2CB67B0B002A5D2E /* SectionTwoCell.xib */,
+			);
+			path = DetailCells;
 			sourceTree = "<group>";
 		};
 		13ED8FD22CA5A5F000D2AD66 /* Configs */ = {
@@ -396,7 +422,10 @@
 				138215502C9824CF00076C1C /* Base in Resources */,
 				139A2B082CA6AD07006B0E17 /* Localizable.strings in Resources */,
 				13ED8FD62CA5A64600D2AD66 /* UAT.xcconfig in Resources */,
+				13DF6C6B2CB67B0B002A5D2E /* SectionTwoCell.xib in Resources */,
+				13A788802CB675FC003148B5 /* SectionOneCell.xib in Resources */,
 				134811AA2CB3F71800CC5C66 /* PixelifySans-Regular.ttf in Resources */,
+				13A7887B2CB675C9003148B5 /* SectionZeroCell.xib in Resources */,
 				13ED8FD42CA5A63200D2AD66 /* Staging.xcconfig in Resources */,
 				1382154B2C9824CD00076C1C /* Base in Resources */,
 				13ED8FDA2CA5A6BD00D2AD66 /* Base.xcconfig in Resources */,
@@ -430,11 +459,13 @@
 				138215482C9824CD00076C1C /* HomeViewController.swift in Sources */,
 				138215642C9839C900076C1C /* PokemonData.swift in Sources */,
 				138215602C9838C600076C1C /* PokemonListData.swift in Sources */,
+				13A7887F2CB675FC003148B5 /* SectionOneCell.swift in Sources */,
 				132C1BDE2CA1B57E0058D62E /* SettingsViewController.swift in Sources */,
 				13ED8FDC2CA5AE5F00D2AD66 /* Environment.swift in Sources */,
 				134811A62CB3E28C00CC5C66 /* Interceptor.swift in Sources */,
 				1382156C2C983AE800076C1C /* PokemonManager.swift in Sources */,
 				139A2B102CA6F147006B0E17 /* CustomTabBarController.swift in Sources */,
+				13DF6C6C2CB67B0B002A5D2E /* SectionTwoCell.swift in Sources */,
 				138215752C9845A800076C1C /* PokemonCell.swift in Sources */,
 				1382155C2C982F1400076C1C /* Constants.swift in Sources */,
 				134811A82CB3E2CA00CC5C66 /* EventMonitor.swift in Sources */,
@@ -444,6 +475,7 @@
 				138215462C9824CD00076C1C /* SceneDelegate.swift in Sources */,
 				13956F212CA2F5F200EAEA17 /* NetworkManager.swift in Sources */,
 				13956F1C2CA2F4ED00EAEA17 /* PokemonAPI.swift in Sources */,
+				13A7887C2CB675C9003148B5 /* SectionZeroCell.swift in Sources */,
 				13956F1A2CA2F3C100EAEA17 /* Endpoint.swift in Sources */,
 				1382155E2C9836EE00076C1C /* DetailsViewController.swift in Sources */,
 			);

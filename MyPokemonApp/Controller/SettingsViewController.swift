@@ -8,19 +8,24 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingTableView.dataSource = self
-        settingTableView.delegate = self
+        setupTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshLanguage()
-        
-        let isDarkMode = UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey)
-        
-        applyTheme(isDarkMode: isDarkMode)
+        applyTheme(isDarkMode: UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey))
     }
     
+    // MARK: - Setup Methods
+    private func setupTableView() {
+        settingTableView.dataSource = self
+        settingTableView.delegate = self
+    }
+}
+
+// MARK: - Language and Theme Methods
+extension SettingsViewController {
     func refreshLanguage() {
         titleLabel.text = "Settings".translated().uppercased()
         titleLabel.font = UIFont.customFont(ofSize: Constants.FontSizes.f40)
@@ -35,15 +40,8 @@ class SettingsViewController: UIViewController {
     private func applyTheme(isDarkMode: Bool) {
         view.backgroundColor = isDarkMode ? .black : .white
         titleLabel.textColor = isDarkMode ? .white : .black
-        
-        if isDarkMode {
-            settingsBackgroundImage.image = UIImage(named: Constants.Images.darkSettingsBackground)
-            settingTableView.separatorColor = .white
-        } else {
-            settingsBackgroundImage.image = UIImage(named: Constants.Images.lightSettingsBackground)
-            settingTableView.separatorColor = .black
-        }
-        
+        settingsBackgroundImage.image = isDarkMode ? UIImage(named: Constants.Images.darkSettingsBackground) : UIImage(named: Constants.Images.lightSettingsBackground)
+        settingTableView.separatorColor = isDarkMode ? .white : .black
         settingTableView.reloadData()
     }
     
@@ -68,10 +66,10 @@ extension SettingsViewController: UITableViewDataSource {
         
         if indexPath.row == 0 {
             cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.languageCellIdentifier, for: indexPath)
-            cell.textLabel?.text = "Supported Languages".translated()
+            cell.textLabel?.text = "Supported_Languages".translated()
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.darkModeCellIdentifier, for: indexPath)
-            cell.textLabel?.text = "Dark Mode".translated()
+            cell.textLabel?.text = "Dark_Mode".translated()
             
             let switchView = UISwitch(frame: .zero)
             switchView.isOn = UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey)

@@ -1,11 +1,11 @@
 // it
 
 "Title" = "PokédApp";
-"Select language" = "Seleziona Lingua";
+"Select_language" = "Seleziona Lingua";
 "Settings" = "Impostazioni";
 "Home" = "Home";
 "Name" = "Nome";
-"Pokédex Number" = "Numero Pokédex";
+"Pokédex_Number" = "Numero Pokédex";
 "Type" = "Tipo";
 "Height" = "Altezza";
 "Weight" = "Peso";
@@ -13,5 +13,5 @@
 "Italian" = "Italiano";
 "Back" = "Indietro";
 
-"Dark Mode" = "Modalità scura";
-"Supported Languages" = "Lingue Supportate";
+"Dark_Mode" = "Modalità scura";
+"Supported_Languages" = "Lingue Supportate";

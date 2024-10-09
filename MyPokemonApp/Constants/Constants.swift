@@ -31,6 +31,15 @@ struct Constants {
         static let cellNibName = "PokemonCell"
         static let homeToDetail = "HomeToDetail"
         
+        static let SectionZeroCellNibName = "SectionZeroCell"
+        static let SectionZeroCellIdentifier = "SectionZeroCellIdentifier"
+        
+        static let SectionOneCellNibName = "SectionOneCell"
+        static let SectionOneCellIdentifier = "SectionOneCellIdentifier"
+        
+        static let SectionTwoCellNibName = "SectionTwoCell"
+        static let SectionTwoCellIdentifier = "SectionTwoCellIdentifier"
+        
         static let languageCellIdentifier = "LanguageCellIdentifier"
         static let darkModeCellIdentifier = "DarkModeCellIdentifier"
     }
@@ -58,6 +67,8 @@ struct Constants {
         
         static let darkSettingsBackground = "SettingsDark"
         static let lightSettingsBackground = "SettingsLight"
+        
+        static let arenaBackground = "Arena"
     }
     
 }
