@@ -67,12 +67,6 @@ extension HomeViewController {
         
         tableView.backgroundColor = backgroundColor
         tableView.separatorColor = separatorColor
-        
-        tableView.visibleCells.forEach { cell in
-            if let pokemonCell = cell as? PokemonCell {
-                updateCellColors(cell: pokemonCell, isDarkMode: isDarkMode)
-            }
-        }
     }
 }
 
@@ -132,25 +126,15 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.cellIdentifier, for: indexPath) as! PokemonCell
-        let pokemonListItem = pokemonList[indexPath.row]
-        
-        configureCell(cell, with: pokemonListItem)
-        return cell
-    }
-    
-    private func configureCell(_ cell: PokemonCell, with pokemon: PokemonData) {
-        cell.backgroundColor = UIColor.clear
-        cell.label.text = "N°\(String(format: "%03d", pokemon.id ?? 0))"
-        cell.labelName.text = pokemon.name.uppercased()
-        
-        let isDarkMode = UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey)
-        updateCellColors(cell: cell, isDarkMode: isDarkMode)
-    }
-    
-    private func updateCellColors(cell: PokemonCell, isDarkMode: Bool) {
-        cell.label.textColor = isDarkMode ? .white : .black
-        cell.labelName.textColor = isDarkMode ? .white : .black
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.cellIdentifier, for: indexPath) as? PokemonCell {
+            let pokemonListItem = pokemonList[indexPath.row]
+            
+            cell.configure(with: pokemonListItem)
+            
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
 }
 

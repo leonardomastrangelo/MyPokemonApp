@@ -3,6 +3,7 @@ import UIKit
 class DetailsViewController: UIViewController {
     
     var pokemon: PokemonData?
+    var pokemonManager = PokemonManager()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var detailsBackgroundImage: UIImageView!
@@ -16,9 +17,9 @@ class DetailsViewController: UIViewController {
             tableView.delegate = self
             tableView.dataSource = self
             
-            tableView.register(UINib(nibName: Constants.TBView.SectionZeroCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.SectionZeroCellIdentifier)
-            tableView.register(UINib(nibName: Constants.TBView.SectionOneCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.SectionOneCellIdentifier)
-            tableView.register(UINib(nibName: Constants.TBView.SectionTwoCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.SectionTwoCellIdentifier)
+            tableView.register(UINib(nibName: Constants.TBView.PokemonItemCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.PokemonItemCellIdentifier)
+            tableView.register(UINib(nibName: Constants.TBView.PokemonOverlayImageCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.PokemonOverlayImageCellIdentifier)
+            tableView.register(UINib(nibName: Constants.TBView.PokemonInfoCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.PokemonInfoCellIdentifier)
             
             tableView.reloadData()
             
@@ -77,50 +78,45 @@ extension DetailsViewController: UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.SectionZeroCellIdentifier, for: indexPath) as! SectionZeroCell
-            cell.configure(text: pokemon.name)
-            return cell
-            
+            if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.PokemonItemCellIdentifier, for: indexPath) as? PokemonItemCell {
+                cell.configure(text: pokemon.name)
+                return cell
+            }
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.SectionOneCellIdentifier, for: indexPath) as! SectionOneCell
-            let backgroundImage = UIImage(named: Constants.Images.arenaBackground)!
-            if let overlayImageURL = URL(string: pokemon.sprites?.front_default ?? "") {
-                cell.configure(backgroundImage: backgroundImage, overlayImageURL: overlayImageURL)
-            }
-            return cell
-            
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.SectionTwoCellIdentifier, for: indexPath) as! SectionTwoCell
-            
-            switch indexPath.row {
-            case 0:
-                cell.configure(titleText: "Pokédex_Number".translated(), detailText: "#\(String(format: "%03d", pokemon.id ?? 0))")
-            case 1:
-                cell.configure(titleText: "Name".translated(), detailText: pokemon.name)
-                
-            case 2:
-                cell.configure(titleText: "Height".translated(), detailText: "\(pokemon.height ?? 0)m")
-            case 3:
-                cell.configure(titleText: "Weight".translated(), detailText: "\(pokemon.weight ?? 0)Kg")
-            case 4:
-                if let types = pokemon.types {
-                    let typeNames = types.map { $0.type.name }.joined(separator: ", ")
-                    cell.configure(titleText: "Type".translated(), detailText: typeNames)
-                } else {
-                    cell.configure(titleText: "Type".translated(), detailText: "None")
+            if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.PokemonOverlayImageCellIdentifier, for: indexPath) as? PokemonOverlayImageCell {
+                if let backgroundImage = UIImage(named: Constants.Images.arenaBackground) {
+                    if let overlayImageURLString = pokemon.sprites?.front_default, let overlayImageURL = URL(string: overlayImageURLString) {
+                        cell.configure(backgroundImage: backgroundImage, overlayImageURL: overlayImageURL)
+                    }
                 }
-            default:
-                break
+                return cell
             }
-            
-            cell.isUserInteractionEnabled = false
-            
-            return cell
+        case 2:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.PokemonInfoCellIdentifier, for: indexPath) as? PokemonInfoCell {
+                
+                let infoItems: [(title: String, detail: String)] = [
+                    ("Pokédex_Number".translated(), pokemon.formattedId ?? ""),
+                    ("Name".translated(), pokemon.capitalizedName),
+                    ("Height".translated(), "\(pokemon.height ?? 0)m"),
+                    ("Weight".translated(), "\(pokemon.weight ?? 0)Kg"),
+                    ("Type".translated(), pokemon.types?.map { $0.type.capitalizedTypeName }.joined(separator: ", ") ?? "None")
+                ]
+                
+                let item = infoItems[indexPath.row]
+                
+                cell.configure(titleText: item.title, detailText: item.detail)
+                cell.isUserInteractionEnabled = false
+                
+                return cell
+            }
             
         default:
             return UITableViewCell()
         }
+        
+        return UITableViewCell()
     }
+    
 }
 
 //MARK: - UITableViewDelegate

@@ -1,6 +1,6 @@
 import UIKit
 
-class SectionTwoCell: UITableViewCell {
+class PokemonInfoCell: UITableViewCell {
     
     @IBOutlet weak var customTitleLabel: UILabel!
     @IBOutlet weak var customDetailLabel: UILabel!

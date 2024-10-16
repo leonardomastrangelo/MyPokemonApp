@@ -1,6 +1,6 @@
 import UIKit
 
-class SectionOneCell: UITableViewCell {
+class PokemonOverlayImageCell: UITableViewCell {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var overlayImageView: UIImageView!

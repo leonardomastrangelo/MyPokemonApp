@@ -12,7 +12,7 @@ extension UIViewController  {
     }
 }
 
-// done
+// V done
 // interceptors - event Monitor
 // refactory grapichs with more details + custom Pixel Font
 // lightmode - darkmode
@@ -23,12 +23,13 @@ extension UIViewController  {
 // togliere uiView contenitore dalle image view nella datailPage
 // normalizzare formati tableView details
 // _ nelle localizable string
+// logic changing languages
 
-// todo
+// ! todo
 // scheda allenatore
 // splashScreen con pokeball + mia pagina caricamento di dati
 // aggiornare in modalità landscape
 
-// priority
-// logic changing languages
+// !! priority
 
+// padding pokeball-n

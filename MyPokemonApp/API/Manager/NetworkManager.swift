@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 enum NetworkError: Error {
     case invalidURL
@@ -68,5 +68,27 @@ struct NetworkManager {
         } catch {
             completion(.failure(.invalidURL))
         }
+    }
+    
+    func fetchImage(from url: URL, completion: @escaping (Swift.Result<UIImage, NetworkError>) -> Void) {
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completion(.failure(.requestFailed(error)))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
+                completion(.failure(.invalidResponse))
+                return
+            }
+            
+            guard let data = data, let image = UIImage(data: data) else {
+                completion(.failure(.invalidResponse))
+                return
+            }
+            
+            completion(.success(image))
+        }
+        task.resume()
     }
 }

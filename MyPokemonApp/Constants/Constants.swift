@@ -31,14 +31,14 @@ struct Constants {
         static let cellNibName = "PokemonCell"
         static let homeToDetail = "HomeToDetail"
         
-        static let SectionZeroCellNibName = "SectionZeroCell"
-        static let SectionZeroCellIdentifier = "SectionZeroCellIdentifier"
+        static let PokemonItemCellNibName = "PokemonItemCell"
+        static let PokemonItemCellIdentifier = "PokemonItemCellIdentifier"
         
-        static let SectionOneCellNibName = "SectionOneCell"
-        static let SectionOneCellIdentifier = "SectionOneCellIdentifier"
+        static let PokemonOverlayImageCellNibName = "PokemonOverlayImageCell"
+        static let PokemonOverlayImageCellIdentifier = "PokemonOverlayImageCellIdentifier"
         
-        static let SectionTwoCellNibName = "SectionTwoCell"
-        static let SectionTwoCellIdentifier = "SectionTwoCellIdentifier"
+        static let PokemonInfoCellNibName = "PokemonInfoCell"
+        static let PokemonInfoCellIdentifier = "PokemonInfoCellIdentifier"
         
         static let languageCellIdentifier = "LanguageCellIdentifier"
         static let darkModeCellIdentifier = "DarkModeCellIdentifier"

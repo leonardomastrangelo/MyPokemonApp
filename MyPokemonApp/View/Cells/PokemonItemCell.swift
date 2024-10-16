@@ -1,6 +1,6 @@
 import UIKit
 
-class SectionZeroCell: UITableViewCell {
+class PokemonItemCell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
     

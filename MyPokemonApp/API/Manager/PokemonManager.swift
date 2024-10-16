@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 protocol PokemonManagerDelegate {
     func didUpdatePokemonList(_ pokemonManager: PokemonManager, pokemonList: [PokemonData])
@@ -32,6 +32,24 @@ class PokemonManager {
                 completion(pokemonData)
             case .failure(let error):
                 print("Failed to fetch details for \(pokemonName): \(error)")
+                completion(nil)
+            }
+        }
+    }
+    
+    func fetchPokemonImage(from imageURL: String, completion: @escaping (UIImage?) -> Void) {
+        guard let url = URL(string: imageURL) else {
+            print("Invalid image URL")
+            completion(nil)
+            return
+        }
+        
+        NetworkManager.shared.fetchImage(from: url) { result in
+            switch result {
+            case .success(let image):
+                completion(image)
+            case .failure(let error):
+                print("Error loading image: \(error)")
                 completion(nil)
             }
         }

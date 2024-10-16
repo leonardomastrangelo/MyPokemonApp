@@ -13,6 +13,11 @@ class LanguageSelectionViewController: UIViewController {
         setupPickerView()
         refreshUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        applyTheme(isDarkMode: UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey))
+    }
 }
 
 //MARK: - UI Setup and Language handling
@@ -38,6 +43,12 @@ extension LanguageSelectionViewController {
         
         refreshUI()
     }
+    
+    private func applyTheme(isDarkMode: Bool) {
+        view.backgroundColor = isDarkMode ? .black : .white
+        languagePickerView.tintColor = isDarkMode ? .white : .black
+        languagePickerView.reloadAllComponents()
+    }
 }
 
 // MARK: - UIPickerView DataSource
@@ -53,16 +64,22 @@ extension LanguageSelectionViewController: UIPickerViewDataSource {
 
 // MARK: - UIPickerView Delegate
 extension LanguageSelectionViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch supportedLanguages[row] {
-        case Constants.SupportedLanguages.english:
-            return "English".translated()
-        case Constants.SupportedLanguages.italian:
-            return "Italian".translated()
-        default:
-            return nil
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+            let title: String
+            switch supportedLanguages[row] {
+            case Constants.SupportedLanguages.english:
+                title = "English".translated()
+            case Constants.SupportedLanguages.italian:
+                title = "Italian".translated()
+            default:
+                title = ""
+            }
+            
+            let isDarkMode = UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey)
+            let textColor = isDarkMode ? UIColor.white : UIColor.black
+            
+            return NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: textColor])
         }
-    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let selectedLanguageCode = supportedLanguages[row]

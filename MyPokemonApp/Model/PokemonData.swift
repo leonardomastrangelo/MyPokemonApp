@@ -7,6 +7,14 @@ struct PokemonData: Codable {
     let weight: Int?
     let sprites: Sprites?
     let types: [Slot]?
+    
+    var formattedId: String? {
+        return "#\(String(format: "%03d", id ?? 0))"
+    }
+    
+    var capitalizedName: String {
+        return name.capitalized
+    }
 }
 
 struct Sprites: Codable {
@@ -22,5 +30,9 @@ struct Slot: Codable {
 struct PokemonType: Codable {
     let name: String
     let url: String
+    
+    var capitalizedTypeName: String {
+        return name.capitalized
+    }
 }
 
