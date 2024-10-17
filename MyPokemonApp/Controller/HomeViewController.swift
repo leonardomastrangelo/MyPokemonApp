@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         refreshLanguage()
         applyTheme(isDarkMode: UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey))
+        tableView.reloadData()
     }
     
     // MARK: - Data Fetching
@@ -116,6 +117,7 @@ extension HomeViewController: PokemonManagerDelegate {
         self.offset += Constants.Network.limit
         self.isLoading = false
         self.tableView.reloadData()
+        
     }
 }
 

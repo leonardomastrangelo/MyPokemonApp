@@ -31,8 +31,13 @@
                         <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <size key="shadowOffset" width="1.5" height="1"/>
                     </label>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fno-ja-VSX">
+                        <rect key="frame" x="268" y="4.6666666666666679" width="52" height="35"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUS-xF-wzj">
-                        <rect key="frame" x="257" y="11.666666666666664" width="43" height="21"/>
+                        <rect key="frame" x="205" y="11.666666666666664" width="43" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -41,18 +46,21 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="kUS-xF-wzj" secondAttribute="trailing" constant="20" id="6aD-59-8nh"/>
                     <constraint firstItem="4cr-gD-YXo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AA6-EG-u7I"/>
+                    <constraint firstItem="fno-ja-VSX" firstAttribute="leading" secondItem="kUS-xF-wzj" secondAttribute="trailing" constant="20" id="DDE-p8-fyC"/>
                     <constraint firstItem="kUS-xF-wzj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IcT-kc-GV4"/>
                     <constraint firstAttribute="bottom" secondItem="cg3-J4-oyQ" secondAttribute="bottom" constant="10" id="SNc-jm-AJc"/>
+                    <constraint firstItem="fno-ja-VSX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Vop-Ww-r83"/>
                     <constraint firstItem="4cr-gD-YXo" firstAttribute="leading" secondItem="cg3-J4-oyQ" secondAttribute="trailing" constant="12" id="aAd-Nk-SR1"/>
                     <constraint firstItem="cg3-J4-oyQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="lPp-nn-OHV"/>
+                    <constraint firstAttribute="trailing" secondItem="fno-ja-VSX" secondAttribute="trailing" id="qSZ-QS-z62"/>
                     <constraint firstItem="cg3-J4-oyQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="v3n-i9-0Uy"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="isFavoriteIcon" destination="fno-ja-VSX" id="r4X-Mw-RKa"/>
                 <outlet property="label" destination="4cr-gD-YXo" id="rtb-4i-jQM"/>
                 <outlet property="labelName" destination="kUS-xF-wzj" id="dtY-e5-nDr"/>
                 <outlet property="pokeball" destination="cg3-J4-oyQ" id="Ziq-Dt-EwE"/>
@@ -62,5 +70,6 @@
     </objects>
     <resources>
         <image name="PokeBall" width="210" height="210"/>
+        <image name="star" catalog="system" width="128" height="116"/>
     </resources>
 </document>

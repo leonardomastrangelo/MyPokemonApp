@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13196AF42CC0F6E200C4BC51 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196AF32CC0F6E200C4BC51 /* UserDefaultsHelper.swift */; };
 		132C1BDE2CA1B57E0058D62E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132C1BDD2CA1B57E0058D62E /* SettingsViewController.swift */; };
 		134811A42CB3CC3800CC5C66 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134811A32CB3CC3800CC5C66 /* String+Extension.swift */; };
 		134811A62CB3E28C00CC5C66 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134811A52CB3E28C00CC5C66 /* Interceptor.swift */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		1318714D2CA5A43C00AA9187 /* MyPokemonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPokemonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1318715C2CA5A44C00AA9187 /* MyPokemonAppUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPokemonAppUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13196AF32CC0F6E200C4BC51 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		132C1BDD2CA1B57E0058D62E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		134811A32CB3CC3800CC5C66 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		134811A52CB3E28C00CC5C66 /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
@@ -174,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				134811A22CB3CC0B00CC5C66 /* Extensions */,
-				139A2B0A2CA6E8F8006B0E17 /* Utilities */,
+				139A2B0A2CA6E8F8006B0E17 /* Helpers */,
 				13ED8FD22CA5A5F000D2AD66 /* Configs */,
 				13956F172CA2F38F00EAEA17 /* API */,
 				1382155A2C982F0500076C1C /* Constants */,
@@ -254,12 +256,13 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		139A2B0A2CA6E8F8006B0E17 /* Utilities */ = {
+		139A2B0A2CA6E8F8006B0E17 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				139A2B0D2CA6ED51006B0E17 /* NavigatorHelper.swift */,
+				13196AF32CC0F6E200C4BC51 /* UserDefaultsHelper.swift */,
 			);
-			path = Utilities;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		13A788782CB6758C003148B5 /* Cells */ = {
@@ -467,6 +470,7 @@
 				139A2B102CA6F147006B0E17 /* CustomTabBarController.swift in Sources */,
 				138215752C9845A800076C1C /* PokemonCell.swift in Sources */,
 				1382155C2C982F1400076C1C /* Constants.swift in Sources */,
+				13196AF42CC0F6E200C4BC51 /* UserDefaultsHelper.swift in Sources */,
 				134811A82CB3E2CA00CC5C66 /* EventMonitor.swift in Sources */,
 				134811A42CB3CC3800CC5C66 /* String+Extension.swift in Sources */,
 				13956F1F2CA2F53800EAEA17 /* HTTP.swift in Sources */,

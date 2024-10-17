@@ -34,6 +34,15 @@ class DetailsViewController: UIViewController {
     }
 }
 
+extension DetailsViewController {
+    func toggleFavorite(for pokemon: PokemonData) {
+        print("Toggling favorite for \(pokemon.name)")
+        UserDefaults.standard.toggleFavorite(pokemon: pokemon)
+        
+        tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+    }
+}
+
 //MARK: - Theme And Table View Style
 extension DetailsViewController {
     private func applyTheme() {
@@ -79,7 +88,14 @@ extension DetailsViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.PokemonItemCellIdentifier, for: indexPath) as? PokemonItemCell {
-                cell.configure(text: pokemon.name)
+                
+                let isFavorite = UserDefaults.standard.isFavorite(pokemon: pokemon)
+                cell.configure(text: pokemon.name, isFavorite: isFavorite)
+                
+                cell.toggleFavoriteCallback = { [weak self] in
+                    self?.toggleFavorite(for: pokemon)
+                }
+                
                 return cell
             }
         case 1:

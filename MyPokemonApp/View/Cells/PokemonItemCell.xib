@@ -25,26 +25,37 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdT-nN-6v5">
-                        <rect key="frame" x="100" y="24.666666666666671" width="170" height="21"/>
+                        <rect key="frame" x="100" y="24.666666666666671" width="150" height="21"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InW-QE-8zJ">
+                        <rect key="frame" x="252" y="18.000000000000004" width="52" height="34.333333333333343"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                        <connections>
+                            <action selector="favoriteButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HT0-Pg-ccX"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="NdT-nN-6v5" secondAttribute="trailing" constant="50" id="0Hb-hf-EeQ"/>
                     <constraint firstItem="NdT-nN-6v5" firstAttribute="leading" secondItem="LlW-WT-nz2" secondAttribute="trailing" constant="30" id="1KG-c3-3us"/>
+                    <constraint firstItem="InW-QE-8zJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8iB-nz-Y3D"/>
+                    <constraint firstAttribute="trailing" secondItem="NdT-nN-6v5" secondAttribute="trailing" constant="70" id="N53-gZ-E06"/>
                     <constraint firstItem="NdT-nN-6v5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ZHc-Bv-Azk"/>
                     <constraint firstAttribute="bottom" secondItem="LlW-WT-nz2" secondAttribute="bottom" constant="10" id="dUB-Ot-9RL"/>
                     <constraint firstItem="LlW-WT-nz2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ltM-d4-3v9"/>
                     <constraint firstItem="LlW-WT-nz2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nNI-Wh-Akc"/>
+                    <constraint firstAttribute="trailing" secondItem="InW-QE-8zJ" secondAttribute="trailing" constant="16" id="p9L-UT-cbi"/>
                     <constraint firstItem="LlW-WT-nz2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="xOU-e8-yuD"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="favoriteButton" destination="InW-QE-8zJ" id="Z1N-Vk-AZR"/>
                 <outlet property="label" destination="NdT-nN-6v5" id="rX5-gg-JKg"/>
             </connections>
             <point key="canvasLocation" x="126.71755725190839" y="-3.1690140845070425"/>
@@ -52,5 +63,6 @@
     </objects>
     <resources>
         <image name="PokeBall" width="210" height="210"/>
+        <image name="star" catalog="system" width="128" height="116"/>
     </resources>
 </document>
