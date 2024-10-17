@@ -71,7 +71,14 @@ struct NetworkManager {
     }
     
     func fetchImage(from url: URL, completion: @escaping (Swift.Result<UIImage, NetworkError>) -> Void) {
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        var request = URLRequest(url: url)
+        request = interceptor?.intercept(request: request) ?? request
+        
+        eventMonitor?.requestDidStart(request)
+        
+        let task = session.dataTask(with: request) { data, response, error in
+            self.eventMonitor?.requestDidFinish(request, response: response, data: data)
+            
             if let error = error {
                 completion(.failure(.requestFailed(error)))
                 return
