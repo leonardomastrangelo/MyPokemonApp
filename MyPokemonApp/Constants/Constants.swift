@@ -40,6 +40,21 @@ struct Constants {
         static let PokemonInfoCellNibName = "PokemonInfoCell"
         static let PokemonInfoCellIdentifier = "PokemonInfoCellIdentifier"
         
+        static let TrainerTitleCellNibName = "TrainerTitleCell"
+        static let TrainerTitleCellIdentifier = "TrainerTitleCellIdentifier"
+        
+        static let TrainerImageCellNibName = "TrainerImageCell"
+        static let TrainerImageCellIdentifier = "TrainerImageCellIdentifier"
+        
+        static let TrainerInfoCellNibName = "TrainerInfoCell"
+        static let TrainerInfoCellIdentifier = "TrainerInfoCellIdentifier"
+        
+        static let HorizontalCollectionViewCellNibName = "HorizontalCollectionViewCell"
+        static let HorizontalCollectionViewCellIdentifier = "HorizontalCollectionViewCellIdentifier"
+        
+        static let PokemonCollectionViewCellNibName = "PokemonCollectionViewCell"
+        static let PokemonCollectionViewCellIdentifier = "PokemonCollectionViewCellIdentifier"
+        
         static let languageCellIdentifier = "LanguageCellIdentifier"
         static let darkModeCellIdentifier = "DarkModeCellIdentifier"
     }

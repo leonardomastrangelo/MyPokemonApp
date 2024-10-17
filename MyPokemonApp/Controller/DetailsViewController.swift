@@ -101,8 +101,8 @@ extension DetailsViewController: UITableViewDataSource {
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.PokemonOverlayImageCellIdentifier, for: indexPath) as? PokemonOverlayImageCell {
                 if let backgroundImage = UIImage(named: Constants.Images.arenaBackground) {
-                    if let overlayImageURLString = pokemon.sprites?.front_default, let overlayImageURL = URL(string: overlayImageURLString) {
-                        cell.configure(backgroundImage: backgroundImage, overlayImageURL: overlayImageURL)
+                    if let overlayImageURLString = pokemon.sprites?.front_default {
+                        cell.configure(backgroundImage: backgroundImage, overlayImageURL: overlayImageURLString)
                     }
                 }
                 return cell

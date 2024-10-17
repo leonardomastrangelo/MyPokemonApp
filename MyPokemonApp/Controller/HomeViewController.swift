@@ -176,7 +176,6 @@ extension HomeViewController {
 extension HomeViewController {
     private func addTableViewDetails() {
         tableView.layer.cornerRadius = Constants.Sizes.pokeCornerRadius
-        tableView.backgroundColor = UIColor.systemYellow
         tableView.layer.borderWidth = Constants.Sizes.pokeBorderWidth
         tableView.layer.borderColor = Constants.PokeColors.pokeGray
     }

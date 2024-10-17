@@ -217,6 +217,47 @@
             </objects>
             <point key="canvasLocation" x="3822.1374045801526" y="-35.211267605633807"/>
         </scene>
+        <!--User View Controller-->
+        <scene sceneID="EwT-6a-7aT">
+            <objects>
+                <viewController id="HuQ-rX-pDJ" userLabel="User View Controller" customClass="UserViewController" customModule="MyPokemonApp_production" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Xk-TN-LeB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="UTi-12-sN3">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NMZ-L2-v0a">
+                                <rect key="frame" x="16" y="99" width="361" height="654"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TAF-tm-mUN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NMZ-L2-v0a" firstAttribute="centerY" secondItem="4Xk-TN-LeB" secondAttribute="centerY" id="0yl-Dm-uon"/>
+                            <constraint firstItem="UTi-12-sN3" firstAttribute="top" secondItem="4Xk-TN-LeB" secondAttribute="top" id="3qC-2i-YDC"/>
+                            <constraint firstAttribute="bottom" secondItem="UTi-12-sN3" secondAttribute="bottom" id="LFG-jR-kKN"/>
+                            <constraint firstItem="TAF-tm-mUN" firstAttribute="trailing" secondItem="NMZ-L2-v0a" secondAttribute="trailing" constant="16" id="T4Y-ph-jDD"/>
+                            <constraint firstItem="NMZ-L2-v0a" firstAttribute="top" secondItem="TAF-tm-mUN" secondAttribute="top" constant="40" id="Z8l-JZ-6XF"/>
+                            <constraint firstItem="UTi-12-sN3" firstAttribute="trailing" secondItem="TAF-tm-mUN" secondAttribute="trailing" id="cPl-LI-fyh"/>
+                            <constraint firstItem="UTi-12-sN3" firstAttribute="leading" secondItem="TAF-tm-mUN" secondAttribute="leading" id="hhi-SR-w67"/>
+                            <constraint firstItem="NMZ-L2-v0a" firstAttribute="centerX" secondItem="4Xk-TN-LeB" secondAttribute="centerX" id="jLB-Zf-K9I"/>
+                            <constraint firstItem="NMZ-L2-v0a" firstAttribute="leading" secondItem="TAF-tm-mUN" secondAttribute="leading" constant="16" id="pFB-x5-VgQ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="User" image="person.fill" catalog="system" selectedImage="person.fill" id="Slc-nA-qUI">
+                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="tableView" destination="NMZ-L2-v0a" id="E9y-tT-xx0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O8o-gx-2aO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2087.7862595419847" y="-804.22535211267609"/>
+        </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="kuf-GV-FIL">
             <objects>
@@ -230,6 +271,7 @@
                     <connections>
                         <segue destination="eQf-Nj-02p" kind="relationship" relationship="viewControllers" id="ohX-jv-FK5"/>
                         <segue destination="D5A-ou-vCv" kind="relationship" relationship="viewControllers" id="532-hs-rH2"/>
+                        <segue destination="HuQ-rX-pDJ" kind="relationship" relationship="viewControllers" id="li8-E5-BqF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaY-BO-MVY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -280,6 +322,7 @@
         <image name="LightDetailsBackground" width="245.33332824707031" height="449.66665649414062"/>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

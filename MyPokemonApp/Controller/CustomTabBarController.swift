@@ -19,6 +19,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         items[0].title = "Home".translated()
         items[1].title = "Settings".translated()
+        items[2].title = "User"
     }
 }
 
