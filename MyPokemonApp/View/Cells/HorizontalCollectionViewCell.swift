@@ -42,10 +42,14 @@ extension HorizontalCollectionViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.TBView.PokemonCollectionViewCellIdentifier, for: indexPath) as! PokemonCollectionViewCell
-        let pokemon = favoritePokemons[indexPath.item]
-        cell.configure(with: pokemon)
-        return cell
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.TBView.PokemonCollectionViewCellIdentifier, for: indexPath) as? PokemonCollectionViewCell {
+            let pokemon = favoritePokemons[indexPath.item]
+            cell.configure(with: pokemon)
+            return cell
+        } else {
+            return UICollectionViewCell()
+        }
+        
     }
 }
 

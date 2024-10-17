@@ -92,7 +92,8 @@ extension HomeViewController: PokemonManagerDelegate {
         // Fetch detailed Pokemon data
         for pokemon in pokemonList {
             dispatchGroup.enter()
-            pokemonManager.fetchPokemonByName(pokemonName: pokemon.name) { detailedPokemon in
+            pokemonManager.fetchPokemonByName(pokemonName: pokemon.name) { [weak self] detailedPokemon in
+                guard self != nil else { return } 
                 if let detailedPokemon = detailedPokemon {
                     detailedPokemonList.append(detailedPokemon)
                 }
