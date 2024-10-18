@@ -2,17 +2,19 @@ import UIKit
 
 class PokemonCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var pokemonImageView: UIImageView!
     @IBOutlet weak var pokemonNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        styleBackground()
     }
     
     func configure(with pokemon: PokemonData) {
         applyTheme()
         
-        pokemonNameLabel.text = pokemon.name
+        pokemonNameLabel.text = pokemon.capitalizedName
         
         if let imageURL = pokemon.sprites?.front_default {
             PokemonManager().fetchPokemonImage(from: imageURL) { [weak self] image in
@@ -34,5 +36,10 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         } else {
             pokemonNameLabel.textColor = UIColor.black
         }
+    }
+    
+    func styleBackground() {
+        bgImageView.layer.cornerRadius = bounds.size.width / 3.5
+        bgImageView.layer.masksToBounds = true
     }
 }

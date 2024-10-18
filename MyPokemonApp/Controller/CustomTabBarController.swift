@@ -18,8 +18,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         guard let items = tabBar.items else { return }
         
         items[0].title = "Home".translated()
-        items[1].title = "Settings".translated()
-        items[2].title = "User"
+        items[1].title = "User"
     }
 }
 

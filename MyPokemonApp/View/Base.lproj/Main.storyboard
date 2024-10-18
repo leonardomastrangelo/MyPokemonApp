@@ -67,16 +67,16 @@
         <!--SettingsViewController-->
         <scene sceneID="b4w-oT-bEe">
             <objects>
-                <viewController id="hpB-sY-2z5" userLabel="SettingsViewController" customClass="SettingsViewController" customModule="MyPokemonApp_production" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="hpB-sY-2z5" userLabel="SettingsViewController" customClass="SettingsViewController" customModule="MyPokemonApp_production" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8cO-8K-PQb">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hOo-bv-CeU">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJs-1d-r5H">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCj-PD-GfK">
                                         <rect key="frame" x="30" y="30" width="42" height="21"/>
@@ -86,7 +86,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LrC-OJ-YZI">
-                                        <rect key="frame" x="10" y="91" width="373" height="545"/>
+                                        <rect key="frame" x="10" y="91" width="373" height="721"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
@@ -147,18 +147,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVE-7t-Hmq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2182.4427480916029" y="681.69014084507046"/>
+            <point key="canvasLocation" x="2088" y="739"/>
         </scene>
         <!--Language Selection View Controller-->
         <scene sceneID="Sgm-D5-ump">
             <objects>
                 <viewController id="1J8-oV-0k1" customClass="LanguageSelectionViewController" customModule="MyPokemonApp_production" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bMZ-MO-qcj">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xr-CY-Xwz">
-                                <rect key="frame" x="36.666666666666657" y="318" width="320" height="216"/>
+                                <rect key="frame" x="36.666666666666657" y="313" width="320" height="216"/>
                             </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k3z-fd-6fq"/>
@@ -175,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5SJ-sh-Lwy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3107.6335877862593" y="681.69014084507046"/>
+            <point key="canvasLocation" x="3015" y="739"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="6LO-EF-0gY">
@@ -229,7 +229,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NMZ-L2-v0a">
-                                <rect key="frame" x="16" y="99" width="361" height="654"/>
+                                <rect key="frame" x="16" y="143" width="361" height="566"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -247,16 +247,14 @@
                             <constraint firstItem="NMZ-L2-v0a" firstAttribute="leading" secondItem="TAF-tm-mUN" secondAttribute="leading" constant="16" id="pFB-x5-VgQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="User" image="person.fill" catalog="system" selectedImage="person.fill" id="Slc-nA-qUI">
-                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="8w1-zD-YTt"/>
                     <connections>
                         <outlet property="tableView" destination="NMZ-L2-v0a" id="E9y-tT-xx0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8o-gx-2aO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2087.7862595419847" y="-804.22535211267609"/>
+            <point key="canvasLocation" x="3014.5038167938928" y="-804.22535211267609"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="kuf-GV-FIL">
@@ -270,8 +268,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="eQf-Nj-02p" kind="relationship" relationship="viewControllers" id="ohX-jv-FK5"/>
-                        <segue destination="D5A-ou-vCv" kind="relationship" relationship="viewControllers" id="532-hs-rH2"/>
-                        <segue destination="HuQ-rX-pDJ" kind="relationship" relationship="viewControllers" id="li8-E5-BqF"/>
+                        <segue destination="Ahn-fb-jPL" kind="relationship" relationship="viewControllers" id="li8-E5-BqF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaY-BO-MVY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -289,32 +286,38 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DjT-uA-XzZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="j9d-xN-IUR"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="udr-c9-Dwd"/>
+                        <segue destination="hpB-sY-2z5" kind="show" id="wlF-U9-vax"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kW-Fy-MEq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2087.7862595419847" y="-35.211267605633807"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="1RD-bK-Bos">
+        <!--User-->
+        <scene sceneID="fgm-gt-h3M">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D5A-ou-vCv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" selectedImage="gear" id="OEs-9i-Svb"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ahn-fb-jPL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="User" image="person.fill" catalog="system" selectedImage="person.fill" id="Slc-nA-qUI">
+                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BoC-gy-tTM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8zi-2P-qJh">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hpB-sY-2z5" kind="relationship" relationship="rootViewController" id="atW-60-YRI"/>
+                        <segue destination="HuQ-rX-pDJ" kind="relationship" relationship="rootViewController" id="CaT-xD-hk5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ot9-2n-K8W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2AP-bF-8Yh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1255.7251908396945" y="681.69014084507046"/>
+            <point key="canvasLocation" x="2087.7862595419847" y="-804.22535211267609"/>
         </scene>
     </scenes>
     <resources>

@@ -13,6 +13,7 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSettingsButton()
         
         tableView.allowsSelection = false
         
@@ -35,6 +36,7 @@ class UserViewController: UIViewController {
         super.viewWillAppear(animated)
         
         applyTheme(isDarkMode: UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey))
+        changeLanguage()
         favoritePokemons = UserDefaults.standard.favoritePokemons
         tableView.reloadData()
     }
@@ -52,65 +54,10 @@ class UserViewController: UIViewController {
         tableView.layer.borderWidth = Constants.Sizes.pokeBorderWidth
         tableView.layer.borderColor = Constants.PokeColors.pokeGray
     }
-}
-
-// MARK: - UITableViewDataSource
-extension UserViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 1
-        case 1:
-            return 1
-        case 2:
-            return trainerInfo.count
-        case 3:
-            return 1
-        default:
-            return 0
+    func changeLanguage() {
+        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: UserSectionType.preferences.rawValue)) as? HorizontalCollectionViewCell {
+            cell.updateTitleAndTheme()
         }
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.TrainerTitleCellIdentifier, for: indexPath) as? TrainerTitleCell {
-                cell.configure(title: "Trainer HUB")
-                return cell
-            }
-        case 1:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.TrainerImageCellIdentifier, for: indexPath) as? TrainerImageCell {
-                return cell
-            }
-        case 2:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.TrainerInfoCellIdentifier, for: indexPath) as? TrainerInfoCell {
-                let info = trainerInfo[indexPath.row]
-                cell.configure(titleText: info.title)
-                cell.customTitleLabel.text = info.detail
-                return cell
-            }
-        case 3:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.HorizontalCollectionViewCellIdentifier, for: indexPath) as? HorizontalCollectionViewCell {
-                cell.favoritePokemons = favoritePokemons
-                cell.collectionView.reloadData()
-                return cell
-            }
-        default:
-            return UITableViewCell()
-        }
-        return UITableViewCell()
-    }
-}
-
-// MARK: - UITableViewDelegate
-extension UserViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
 }

@@ -3,6 +3,7 @@ import UIKit
 class HorizontalCollectionViewCell: UITableViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var favoritePokemons: [PokemonData] = [] {
         didSet {
@@ -12,13 +13,17 @@ class HorizontalCollectionViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setupCollectionView()
+        updateTitleAndTheme()
+    }
+    
+    private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 300, height: 250)
+        layout.itemSize = CGSize(width: 160, height: 200)
         collectionView.collectionViewLayout = layout
         
         collectionView.register(UINib(nibName: Constants.TBView.PokemonCollectionViewCellNibName, bundle: nil), forCellWithReuseIdentifier: Constants.TBView.PokemonCollectionViewCellIdentifier)
@@ -32,6 +37,15 @@ class HorizontalCollectionViewCell: UITableViewCell {
             collectionView.reloadData()
         }
     }
+    
+    func updateTitleAndTheme() {
+        titleLabel.text = "My_Favorite_Pokemon".translated()
+        titleLabel.font = UIFont.customFont(ofSize: Constants.FontSizes.f22)
+        
+        let isDarkMode = UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey)
+        titleLabel.textColor = isDarkMode ? UIColor.white : UIColor.black
+    }
+    
 }
 
 // MARK: - UICollectionViewDataSource
@@ -49,7 +63,6 @@ extension HorizontalCollectionViewCell: UICollectionViewDataSource {
         } else {
             return UICollectionViewCell()
         }
-        
     }
 }
 

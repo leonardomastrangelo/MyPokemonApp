@@ -19,6 +19,11 @@
 		13196B0C2CC13E1100C4BC51 /* HorizontalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13196B0A2CC13E1100C4BC51 /* HorizontalCollectionViewCell.xib */; };
 		13196B0F2CC13EE100C4BC51 /* PokemonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B0D2CC13EE100C4BC51 /* PokemonCollectionViewCell.swift */; };
 		13196B102CC13EE100C4BC51 /* PokemonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13196B0E2CC13EE100C4BC51 /* PokemonCollectionViewCell.xib */; };
+		13196B132CC24D5D00C4BC51 /* DetailsVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B122CC24D5D00C4BC51 /* DetailsVC+TableView.swift */; };
+		13196B152CC24E4B00C4BC51 /* HomeVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B142CC24E4B00C4BC51 /* HomeVC+TableView.swift */; };
+		13196B172CC24F1200C4BC51 /* SettingsVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B162CC24F1200C4BC51 /* SettingsVC+TableView.swift */; };
+		13196B1A2CC24FD800C4BC51 /* LanguageSelectionVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B192CC24FD800C4BC51 /* LanguageSelectionVC+TableView.swift */; };
+		13196B1C2CC2508400C4BC51 /* UserVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B1B2CC2508400C4BC51 /* UserVC+TableView.swift */; };
 		132C1BDE2CA1B57E0058D62E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132C1BDD2CA1B57E0058D62E /* SettingsViewController.swift */; };
 		134811A42CB3CC3800CC5C66 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134811A32CB3CC3800CC5C66 /* String+Extension.swift */; };
 		134811A62CB3E28C00CC5C66 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134811A52CB3E28C00CC5C66 /* Interceptor.swift */; };
@@ -91,6 +96,11 @@
 		13196B0A2CC13E1100C4BC51 /* HorizontalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalCollectionViewCell.xib; sourceTree = "<group>"; };
 		13196B0D2CC13EE100C4BC51 /* PokemonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCollectionViewCell.swift; sourceTree = "<group>"; };
 		13196B0E2CC13EE100C4BC51 /* PokemonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonCollectionViewCell.xib; sourceTree = "<group>"; };
+		13196B122CC24D5D00C4BC51 /* DetailsVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsVC+TableView.swift"; sourceTree = "<group>"; };
+		13196B142CC24E4B00C4BC51 /* HomeVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+TableView.swift"; sourceTree = "<group>"; };
+		13196B162CC24F1200C4BC51 /* SettingsVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsVC+TableView.swift"; sourceTree = "<group>"; };
+		13196B192CC24FD800C4BC51 /* LanguageSelectionVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LanguageSelectionVC+TableView.swift"; sourceTree = "<group>"; };
+		13196B1B2CC2508400C4BC51 /* UserVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserVC+TableView.swift"; sourceTree = "<group>"; };
 		132C1BDD2CA1B57E0058D62E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		134811A32CB3CC3800CC5C66 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		134811A52CB3E28C00CC5C66 /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
@@ -165,6 +175,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13196B112CC24D0C00C4BC51 /* VC+TableView */ = {
+			isa = PBXGroup;
+			children = (
+				13196B122CC24D5D00C4BC51 /* DetailsVC+TableView.swift */,
+				13196B142CC24E4B00C4BC51 /* HomeVC+TableView.swift */,
+				13196B162CC24F1200C4BC51 /* SettingsVC+TableView.swift */,
+				13196B1B2CC2508400C4BC51 /* UserVC+TableView.swift */,
+			);
+			path = "VC+TableView";
+			sourceTree = "<group>";
+		};
+		13196B182CC24FB400C4BC51 /* VC+PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				13196B192CC24FD800C4BC51 /* LanguageSelectionVC+TableView.swift */,
+			);
+			path = "VC+PickerView";
+			sourceTree = "<group>";
+		};
 		134811A22CB3CC0B00CC5C66 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +268,8 @@
 		138215592C982EBC00076C1C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				13196B182CC24FB400C4BC51 /* VC+PickerView */,
+				13196B112CC24D0C00C4BC51 /* VC+TableView */,
 				138215472C9824CD00076C1C /* HomeViewController.swift */,
 				1382155D2C9836ED00076C1C /* DetailsViewController.swift */,
 				132C1BDD2CA1B57E0058D62E /* SettingsViewController.swift */,
@@ -496,6 +527,7 @@
 			files = (
 				139A2B0E2CA6ED51006B0E17 /* NavigatorHelper.swift in Sources */,
 				13196AF62CC115B700C4BC51 /* UserViewController.swift in Sources */,
+				13196B172CC24F1200C4BC51 /* SettingsVC+TableView.swift in Sources */,
 				134811AC2CB3F98A00CC5C66 /* UIFont+Custom.swift in Sources */,
 				13AC0FA62CB56E76001A5C37 /* LanguageSelectionViewController.swift in Sources */,
 				138215482C9824CD00076C1C /* HomeViewController.swift in Sources */,
@@ -506,7 +538,10 @@
 				13196AFB2CC119A000C4BC51 /* TrainerTitleCell.swift in Sources */,
 				132C1BDE2CA1B57E0058D62E /* SettingsViewController.swift in Sources */,
 				13ED8FDC2CA5AE5F00D2AD66 /* Environment.swift in Sources */,
+				13196B132CC24D5D00C4BC51 /* DetailsVC+TableView.swift in Sources */,
+				13196B152CC24E4B00C4BC51 /* HomeVC+TableView.swift in Sources */,
 				134811A62CB3E28C00CC5C66 /* Interceptor.swift in Sources */,
+				13196B1A2CC24FD800C4BC51 /* LanguageSelectionVC+TableView.swift in Sources */,
 				1382156C2C983AE800076C1C /* PokemonManager.swift in Sources */,
 				139A2B102CA6F147006B0E17 /* CustomTabBarController.swift in Sources */,
 				138215752C9845A800076C1C /* PokemonCell.swift in Sources */,
@@ -521,6 +556,7 @@
 				13956F212CA2F5F200EAEA17 /* NetworkManager.swift in Sources */,
 				13832DD82CBFB1CC0094AF4D /* PokemonInfoCell.swift in Sources */,
 				13196B0F2CC13EE100C4BC51 /* PokemonCollectionViewCell.swift in Sources */,
+				13196B1C2CC2508400C4BC51 /* UserVC+TableView.swift in Sources */,
 				13956F1C2CA2F4ED00EAEA17 /* PokemonAPI.swift in Sources */,
 				13A7887C2CB675C9003148B5 /* PokemonItemCell.swift in Sources */,
 				13956F1A2CA2F3C100EAEA17 /* Endpoint.swift in Sources */,

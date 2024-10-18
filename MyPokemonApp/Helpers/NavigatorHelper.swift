@@ -1,7 +1,3 @@
-//
-//  NavigatorHelper.swift
-//  MyPokemonApp
-
 import UIKit
 
 extension UIViewController  {
@@ -10,26 +6,17 @@ extension UIViewController  {
         let backItem = UIBarButtonItem(title: backButtonTitle, style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backItem
     }
+    
+    func addSettingsButton() {
+        let gearImage = UIImage(systemName: "gear")
+        let settingsButton = UIBarButtonItem(image: gearImage, style: .plain, target: self, action: #selector(openSettings))
+        
+        self.navigationItem.rightBarButtonItem = settingsButton
+    }
+    
+    @objc private func openSettings() {
+        if let settingsVC = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") {
+            navigationController?.pushViewController(settingsVC, animated: true)
+        }
+    }
 }
-
-// V done
-// interceptors - event Monitor
-// refactory grapichs with more details + custom Pixel Font
-// lightmode - darkmode
-// table view section 3
-// section 0 - 1 row
-// section 1 - 1 row
-// section 2 - row 5
-// togliere uiView contenitore dalle image view nella datailPage
-// normalizzare formati tableView details
-// _ nelle localizable string
-// logic changing languages
-
-// ! todo
-// scheda allenatore
-// splashScreen con pokeball + mia pagina caricamento di dati
-// aggiornare in modalità landscape
-
-// !! priority
-
-// padding pokeball-n
