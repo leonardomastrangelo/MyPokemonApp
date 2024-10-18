@@ -16,24 +16,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSO-rx-h5U" userLabel="Custom Title Label">
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nCi-do-QHi">
                         <rect key="frame" x="16" y="20" width="288" height="61"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="FSO-rx-h5U" secondAttribute="bottom" constant="20" id="9LH-fy-dyh"/>
-                    <constraint firstItem="FSO-rx-h5U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="E8q-ru-i7Z"/>
-                    <constraint firstAttribute="trailing" secondItem="FSO-rx-h5U" secondAttribute="trailing" constant="16" id="ena-pn-CsB"/>
-                    <constraint firstItem="FSO-rx-h5U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="s82-D6-9eE"/>
+                    <constraint firstAttribute="trailing" secondItem="nCi-do-QHi" secondAttribute="trailing" constant="16" id="NBc-Cp-YFS"/>
+                    <constraint firstAttribute="bottom" secondItem="nCi-do-QHi" secondAttribute="bottom" constant="20" id="Zrf-ws-k1Y"/>
+                    <constraint firstItem="nCi-do-QHi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="f2W-b4-hnY"/>
+                    <constraint firstItem="nCi-do-QHi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="fkm-Ey-Lnp"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="customTitleLabel" destination="FSO-rx-h5U" id="HB9-4R-kxE"/>
+                <outlet property="customTextField" destination="nCi-do-QHi" id="jbP-hc-c69"/>
             </connections>
             <point key="canvasLocation" x="83.969465648854964" y="-10.91549295774648"/>
         </tableViewCell>

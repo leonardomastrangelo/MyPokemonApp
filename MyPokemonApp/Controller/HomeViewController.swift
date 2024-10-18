@@ -14,7 +14,6 @@ class HomeViewController: UIViewController {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSettingsButton()
         setupUI()
         checkSettings()
         pokemonManager.delegate = self

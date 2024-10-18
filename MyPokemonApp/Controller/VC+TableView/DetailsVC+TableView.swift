@@ -46,11 +46,11 @@ extension DetailsViewController: UITableViewDataSource {
             }
         case DetailsSectionType.card.rawValue:
             if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.PokemonOverlayImageCellIdentifier, for: indexPath) as? PokemonOverlayImageCell {
-                if let backgroundImage = UIImage(named: Constants.Images.arenaBackground) {
-                    if let overlayImageURLString = pokemon.sprites?.front_default {
-                        cell.configure(backgroundImage: backgroundImage, overlayImageURL: overlayImageURLString)
-                    }
+                let backgroundImage = UIImage(named: Constants.Images.arenaBackground)
+                if let overlayImageURLString = pokemon.sprites?.front_default {
+                    cell.configure(backgroundImage: backgroundImage, overlayImageURL: overlayImageURLString)
                 }
+                
                 return cell
             }
         case DetailsSectionType.body.rawValue:

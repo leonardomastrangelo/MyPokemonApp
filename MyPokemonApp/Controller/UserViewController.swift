@@ -5,27 +5,17 @@ class UserViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var favoritePokemons: [PokemonData] = []
-    let trainerInfo: [(title: String, detail: String)] = [
-        ("Name", "Leo Mastrangelo"),
-        ("BirthDay", "01/07/2002"),
-        ("HomeTown", "Lavandonia")
+    var trainerInfo: [(title: String, accountKey: String)] = [
+        ("Name", "nameKey"),
+        ("BirthDay", "birthdayKey"),
+        ("HomeTown", "hometownKey")
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addSettingsButton()
         
-        tableView.allowsSelection = false
-        
-        tableView.showsVerticalScrollIndicator = false
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        tableView.register(UINib(nibName: Constants.TBView.TrainerTitleCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.TrainerTitleCellIdentifier)
-        tableView.register(UINib(nibName: Constants.TBView.TrainerImageCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.TrainerImageCellIdentifier)
-        tableView.register(UINib(nibName: Constants.TBView.TrainerInfoCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.TrainerInfoCellIdentifier)
-        tableView.register(UINib(nibName: Constants.TBView.HorizontalCollectionViewCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.HorizontalCollectionViewCellIdentifier)
+        setupUI()
         
         favoritePokemons = UserDefaults.standard.favoritePokemons
         
@@ -38,7 +28,33 @@ class UserViewController: UIViewController {
         applyTheme(isDarkMode: UserDefaults.standard.bool(forKey: Constants.UserDefaults.darkModeKey))
         changeLanguage()
         favoritePokemons = UserDefaults.standard.favoritePokemons
+        loadTrainerInfo()
         tableView.reloadData()
+    }
+    
+    private func setupUI() {
+        tableView.allowsSelection = false
+        
+        tableView.showsVerticalScrollIndicator = false
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: Constants.TBView.TrainerTitleCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.TrainerTitleCellIdentifier)
+        tableView.register(UINib(nibName: Constants.TBView.TrainerImageCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.TrainerImageCellIdentifier)
+        tableView.register(UINib(nibName: Constants.TBView.TrainerInfoCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.TrainerInfoCellIdentifier)
+        tableView.register(UINib(nibName: Constants.TBView.HorizontalCollectionViewCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.HorizontalCollectionViewCellIdentifier)
+    }
+    
+    private func loadTrainerInfo() {
+        for (index, info) in trainerInfo.enumerated() {
+            if let value = KeychainManager.loadData(service: Constants.Keychain.serviceName, account: info.accountKey) {
+                print("Loaded data for \(info.accountKey): \(value)")
+                if let cell = tableView.cellForRow(at: IndexPath(row: index, section: UserSectionType.body.rawValue)) as? TrainerInfoCell {
+                    cell.customTextField.text = value
+                }
+            }
+        }
     }
     
     private func applyTheme(isDarkMode: Bool) {

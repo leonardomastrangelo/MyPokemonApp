@@ -15,8 +15,12 @@ class PokemonOverlayImageCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(backgroundImage: UIImage, overlayImageURL: String) {
-        backgroundImageView.image = backgroundImage
+    func configure(backgroundImage: UIImage?, overlayImageURL: String) {
+        if let backgroundImage = backgroundImage {
+            backgroundImageView.image = backgroundImage
+        } else {
+            backgroundImageView.image = nil
+        }
         
         pokemonManager.fetchPokemonImage(from: overlayImageURL) { [weak self] image in
             guard let self = self else { return }

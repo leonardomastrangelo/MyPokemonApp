@@ -13,6 +13,10 @@ struct Constants {
         static let selectedLanguageKey = "selectedLanguage"
     }
     
+    struct Keychain {
+        static let serviceName = "com.leomastrangelo.PokemonApp"
+    }
+    
     struct SupportedLanguages {
         static let english = "en"
         static let italian = "it"

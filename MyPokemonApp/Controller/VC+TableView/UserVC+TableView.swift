@@ -43,8 +43,8 @@ extension UserViewController: UITableViewDataSource {
         case UserSectionType.body.rawValue:
             if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.TrainerInfoCellIdentifier, for: indexPath) as? TrainerInfoCell {
                 let info = trainerInfo[indexPath.row]
-                cell.configure(titleText: info.title)
-                cell.customTitleLabel.text = info.detail
+                cell.configure(placeholder: info.title, accountKey: info.accountKey)
+                
                 return cell
             }
         case UserSectionType.preferences.rawValue:
@@ -65,5 +65,4 @@ extension UserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
 }
