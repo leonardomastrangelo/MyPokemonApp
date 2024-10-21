@@ -20,6 +20,10 @@ class UserViewController: UIViewController {
         favoritePokemons = UserDefaults.standard.favoritePokemons
         
         addTableViewDetails()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,5 +79,13 @@ class UserViewController: UIViewController {
         if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: UserSectionType.preferences.rawValue)) as? HorizontalCollectionViewCell {
             cell.updateTitleAndTheme()
         }
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        view.endEditing(true)
     }
 }

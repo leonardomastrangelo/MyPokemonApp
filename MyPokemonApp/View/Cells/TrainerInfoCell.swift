@@ -16,6 +16,9 @@ class TrainerInfoCell: UITableViewCell {
     
     func configure(placeholder: String, accountKey: String) {
         self.accountKey = accountKey
+        
+        customTextField.returnKeyType = .done
+        
         customTextField.placeholder = placeholder
         
         customTextField.font = UIFont.customFont(ofSize: Constants.FontSizes.f19)
