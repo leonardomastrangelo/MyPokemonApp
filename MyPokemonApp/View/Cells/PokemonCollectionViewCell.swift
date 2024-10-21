@@ -14,6 +14,7 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     func configure(with pokemon: PokemonData) {
         applyTheme()
         
+        
         pokemonNameLabel.text = pokemon.capitalizedName
         
         if let imageURL = pokemon.sprites?.front_default {

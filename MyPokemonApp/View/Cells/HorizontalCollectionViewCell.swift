@@ -8,6 +8,7 @@ class HorizontalCollectionViewCell: UITableViewCell {
     var favoritePokemons: [PokemonData] = [] {
         didSet {
             updateUI()
+            updateTitleAndTheme()
         }
     }
     

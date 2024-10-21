@@ -41,10 +41,13 @@ extension UserViewController: UITableViewDataSource {
                 return cell
             }
         case UserSectionType.body.rawValue:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.TrainerInfoCellIdentifier, for: indexPath) as? TrainerInfoCell {
+            if indexPath.row == 1, let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.DatePickerCellIdentifier, for: indexPath) as? DatePickerCell {
+                let info = trainerInfo[indexPath.row]
+                cell.configure(accountKey: info.accountKey)
+                return cell
+            } else if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.TrainerInfoCellIdentifier, for: indexPath) as? TrainerInfoCell {
                 let info = trainerInfo[indexPath.row]
                 cell.configure(placeholder: info.title, accountKey: info.accountKey)
-                
                 return cell
             }
         case UserSectionType.preferences.rawValue:

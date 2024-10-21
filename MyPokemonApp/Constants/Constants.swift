@@ -53,6 +53,9 @@ struct Constants {
         static let TrainerInfoCellNibName = "TrainerInfoCell"
         static let TrainerInfoCellIdentifier = "TrainerInfoCellIdentifier"
         
+        static let DatePickerCellNibName = "DatePickerCell"
+        static let DatePickerCellIdentifier = "DatePickerCellIdentifier"
+        
         static let HorizontalCollectionViewCellNibName = "HorizontalCollectionViewCell"
         static let HorizontalCollectionViewCellIdentifier = "HorizontalCollectionViewCellIdentifier"
         
@@ -74,6 +77,7 @@ struct Constants {
         static let f30 = 30.0
         static let f22 = 22.0
         static let f19 = 19.0
+        static let f15 = 15.0
     }
     
     struct PokeColors {
