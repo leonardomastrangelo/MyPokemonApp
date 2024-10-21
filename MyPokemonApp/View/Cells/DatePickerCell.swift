@@ -19,9 +19,19 @@ class DatePickerCell: UITableViewCell {
     func configure(accountKey: String) {
         self.accountKey = accountKey
         
-        if let value = KeychainManager.loadData(service: Constants.Keychain.serviceName, account: accountKey),
-           let savedDate = DateHelper.stringToDate(value) {
-            datePicker.date = savedDate
+        KeychainManager.loadData(service: Constants.Keychain.serviceName, account: accountKey) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let value):
+                    if let savedDate = DateHelper.stringToDate(value) {
+                        self.datePicker.date = savedDate
+                    }
+                case .failure(let error):
+                    print("Error loading data: \(error.localizedDescription)")
+                }
+                self.updateLocale()
+                self.applyTitleAndTheme()
+            }
         }
         
         updateLocale()
@@ -49,7 +59,16 @@ class DatePickerCell: UITableViewCell {
         if let key = accountKey {
             let dateString = DateHelper.dateToString(sender.date)
             print("Saving date: \(dateString)")
-            KeychainManager.saveData(service: Constants.Keychain.serviceName, account: key, data: dateString)
+            KeychainManager.saveData(service: Constants.Keychain.serviceName, account: key, data: dateString) { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success():
+                        print("Date saved successfully.")
+                    case .failure(let error):
+                        print("Error saving date: \(error.localizedDescription)")
+                    }
+                }
+            }
         }
     }
     

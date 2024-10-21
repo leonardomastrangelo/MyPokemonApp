@@ -1,12 +1,35 @@
 import Foundation
 import Security
 
+enum KeychainError: Error {
+    case itemNotFound
+    case duplicateItem
+    case unexpectedData
+    case unhandledError(status: OSStatus)
+    
+    var localizedDescription: String {
+        switch self {
+        case .itemNotFound:
+            return "Item not found."
+        case .duplicateItem:
+            return "Duplicate item."
+        case .unexpectedData:
+            return "Unexpected data."
+        case .unhandledError(let status):
+            return "Unhandled error: \(status)"
+        }
+    }
+}
+
+
 class KeychainManager {
     
-    class func saveData(service: String, account: String, data: String) {
+    class func saveData(service: String, account: String, data: String, completion: @escaping (Swift.Result<Void, KeychainError>) -> Void) {
         let dataFromString = data.data(using: .utf8)!
         let query: [String: Any] = [
+            /* IMPORTANT */
             kSecClass as String: kSecClassGenericPassword,
+            
             kSecAttrService as String: service,
             kSecAttrAccount as String: account,
             kSecValueData as String: dataFromString
@@ -15,14 +38,19 @@ class KeychainManager {
         SecItemDelete(query as CFDictionary)
         
         let status = SecItemAdd(query as CFDictionary, nil)
-        if status == noErr {
+        
+        switch status {
+        case errSecSuccess:
             print("Successfully saved data for : \(account)")
-        } else {
-            print("Error during data saving: \(status)")
+            completion(.success(()))
+        case errSecDuplicateItem:
+            completion(.failure(.duplicateItem))
+        default:
+            completion(.failure(.unhandledError(status: status)))
         }
     }
     
-    class func loadData(service: String, account: String) -> String? {
+    class func loadData(service: String, account: String, completion: @escaping (Swift.Result<String, KeychainError>) -> Void) {
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service,
@@ -35,17 +63,22 @@ class KeychainManager {
         var item: CFTypeRef?
         let status = SecItemCopyMatching(query as CFDictionary, &item)
         
-        if status == noErr {
+        switch status {
+        case errSecSuccess:
             if let existingItem = item as? [String: Any],
                let data = existingItem[kSecValueData as String] as? Data,
                let value = String(data: data, encoding: .utf8) {
-                return value
+                completion(.success(value))
+            } else {
+                completion(.failure(.unexpectedData))
             }
+        case errSecItemNotFound:
+            completion(.failure(.itemNotFound))
+        default:
+            completion(.failure(.unhandledError(status: status)))
         }
-        
-        print("Error during data loading: \(status)")
-        return nil
     }
-    
 }
+
+
 

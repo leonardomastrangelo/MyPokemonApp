@@ -53,14 +53,20 @@ class UserViewController: UIViewController {
     
     private func loadTrainerInfo() {
         for (index, info) in trainerInfo.enumerated() {
-            if let value = KeychainManager.loadData(service: Constants.Keychain.serviceName, account: info.accountKey) {
-                print("Loaded data for \(info.accountKey): \(value)")
-                if let cell = tableView.cellForRow(at: IndexPath(row: index, section: UserSectionType.body.rawValue)) as? TrainerInfoCell {
-                    cell.customTextField.text = value
+            KeychainManager.loadData(service: Constants.Keychain.serviceName, account: info.accountKey) { result in
+                switch result {
+                case .success(let value):
+                    print("Loaded data for \(info.accountKey): \(value)")
+                    if let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: UserSectionType.body.rawValue)) as? TrainerInfoCell {
+                        cell.customTextField.text = value
+                    }
+                case .failure(let error):
+                    print("Error loading data: \(error.localizedDescription)")
                 }
             }
         }
     }
+    
     
     private func applyTheme(isDarkMode: Bool) {
         let backgroundColor: UIColor = isDarkMode ? UIColor.black.withAlphaComponent(0.7) : UIColor.systemYellow.withAlphaComponent(0.7)

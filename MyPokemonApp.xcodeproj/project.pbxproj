@@ -109,6 +109,7 @@
 		13196B1F2CC63FEF00C4BC51 /* DatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
 		13196B202CC63FEF00C4BC51 /* DatePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerCell.xib; sourceTree = "<group>"; };
 		13196B232CC640D800C4BC51 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		13196B252CC6593500C4BC51 /* MyPokemonApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyPokemonApp.entitlements; sourceTree = "<group>"; };
 		132C1BDD2CA1B57E0058D62E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		134811A32CB3CC3800CC5C66 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		134811A52CB3E28C00CC5C66 /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
@@ -234,6 +235,7 @@
 		138215422C9824CD00076C1C /* MyPokemonApp */ = {
 			isa = PBXGroup;
 			children = (
+				13196B252CC6593500C4BC51 /* MyPokemonApp.entitlements */,
 				134811A22CB3CC0B00CC5C66 /* Extensions */,
 				139A2B0A2CA6E8F8006B0E17 /* Helpers */,
 				13ED8FD22CA5A5F000D2AD66 /* Configs */,
@@ -831,6 +833,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(inherited)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyPokemonApp/MyPokemonApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -865,6 +868,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(inherited)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyPokemonApp/MyPokemonApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -965,6 +969,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(inherited)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyPokemonApp/MyPokemonApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1102,6 +1107,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(inherited)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyPokemonApp/MyPokemonApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1232,6 +1238,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(inherited)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyPokemonApp/MyPokemonApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1362,6 +1369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(inherited)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyPokemonApp/MyPokemonApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;

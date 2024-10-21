@@ -14,7 +14,7 @@ class TrainerInfoCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(placeholder: String, accountKey: String) {
+    func configure(placeholder: String, accountKey: String?) {
         self.accountKey = accountKey
         
         customTextField.returnKeyType = .done
@@ -23,10 +23,22 @@ class TrainerInfoCell: UITableViewCell {
         
         customTextField.font = UIFont.customFont(ofSize: Constants.FontSizes.f19)
         
-        if let value = KeychainManager.loadData(service: Constants.Keychain.serviceName, account: accountKey) {
-            customTextField.text = value
+        if let key = accountKey {
+            KeychainManager.loadData(service: Constants.Keychain.serviceName, account: key) { result in
+                switch result {
+                case .success(let value):
+                    DispatchQueue.main.async {
+                        self.customTextField.text = value
+                    }
+                case .failure(let error):
+                    print("Error loading data: \(error.localizedDescription)")
+                    DispatchQueue.main.async {
+                        self.customTextField.text = ""
+                    }
+                }
+            }
         } else {
-            customTextField.text = ""
+            print("Account key is nil.")
         }
         
         applyTheme()
@@ -44,15 +56,18 @@ extension TrainerInfoCell: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let text = textField.text, let key = accountKey {
             print("Text field editing ended with text: \(text)")
-            KeychainManager.saveData(service: Constants.Keychain.serviceName, account: key, data: text)
+            KeychainManager.saveData(service: Constants.Keychain.serviceName, account: key, data: text) { result in
+                switch result {
+                case .success():
+                    print("Successfully saved data for : \(key)")
+                case .failure(let error):
+                    print("Error saving data: \(error.localizedDescription)")
+                }
+            }
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let text = textField.text, let key = accountKey {
-            print("Text field return pressed with text: \(text)")
-            KeychainManager.saveData(service: Constants.Keychain.serviceName, account: key, data: text)
-        }
         textField.resignFirstResponder()
         return true
     }
