@@ -8,7 +8,8 @@ class UserViewController: UIViewController {
     var trainerInfo: [(title: String, accountKey: String)] = [
         ("Name", "nameKey"),
         ("BirthDay", "birthdayKey"),
-        ("HomeTown", "hometownKey")
+        ("HomeTown", "hometownKey"),
+        ("PhoneNumber", "phonenumberKey")
     ]
     
     override func viewDidLoad() {
@@ -48,6 +49,7 @@ class UserViewController: UIViewController {
         tableView.register(UINib(nibName: Constants.TBView.TrainerImageCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.TrainerImageCellIdentifier)
         tableView.register(UINib(nibName: Constants.TBView.TrainerInfoCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.TrainerInfoCellIdentifier)
         tableView.register(UINib(nibName: Constants.TBView.DatePickerCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.DatePickerCellIdentifier)
+        tableView.register(UINib(nibName: Constants.TBView.PhoneNumberCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.PhoneNumberCellIdentifier)
         tableView.register(UINib(nibName: Constants.TBView.HorizontalCollectionViewCellNibName, bundle: nil), forCellReuseIdentifier: Constants.TBView.HorizontalCollectionViewCellIdentifier)
     }
     

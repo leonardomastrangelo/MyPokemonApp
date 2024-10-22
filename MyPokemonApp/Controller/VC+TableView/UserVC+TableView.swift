@@ -7,6 +7,25 @@ enum UserSectionType: Int, CaseIterable {
     case preferences = 3
 }
 
+enum InfoCellType: Int {
+    case generalInfo
+    case date
+    case phoneNumber
+    
+    static func cellType(for row: Int) -> InfoCellType {
+        switch row {
+        case 0, 2:
+            return .generalInfo
+        case 1:
+            return .date
+        case 3:
+            return .phoneNumber
+        default:
+            return .generalInfo
+        }
+    }
+}
+
 // MARK: - UITableViewDataSource
 extension UserViewController: UITableViewDataSource {
     
@@ -30,37 +49,53 @@ extension UserViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case UserSectionType.header.rawValue:
+        switch UserSectionType(rawValue: indexPath.section) {
+        case .header:
             if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.TrainerTitleCellIdentifier, for: indexPath) as? TrainerTitleCell {
                 cell.configure(title: "Trainer HUB")
                 return cell
             }
-        case UserSectionType.card.rawValue:
+            
+        case .card:
             if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.TrainerImageCellIdentifier, for: indexPath) as? TrainerImageCell {
                 return cell
             }
-        case UserSectionType.body.rawValue:
-            if indexPath.row == 1, let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.DatePickerCellIdentifier, for: indexPath) as? DatePickerCell {
-                let info = trainerInfo[indexPath.row]
-                cell.configure(accountKey: info.accountKey)
-                return cell
-            } else if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.TrainerInfoCellIdentifier, for: indexPath) as? TrainerInfoCell {
-                let info = trainerInfo[indexPath.row]
-                cell.configure(placeholder: info.title, accountKey: info.accountKey)
-                return cell
+            
+        case .body:
+            let cellType = InfoCellType.cellType(for: indexPath.row)
+            let info = trainerInfo[indexPath.row]
+            
+            switch cellType {
+            case .generalInfo:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.TrainerInfoCellIdentifier, for: indexPath) as? TrainerInfoCell {
+                    cell.configure(placeholder: info.title.translated(), accountKey: info.accountKey)
+                    return cell
+                }
+            case .date:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.DatePickerCellIdentifier, for: indexPath) as? DatePickerCell {
+                    cell.configure(accountKey: info.accountKey)
+                    return cell
+                }
+            case .phoneNumber:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.PhoneNumberCellIdentifier, for: indexPath) as? PhoneNumberCell {
+                    cell.configure(placeholder: info.title.translated(), accountKey: info.accountKey)
+                    return cell
+                }
             }
-        case UserSectionType.preferences.rawValue:
+            
+        case .preferences:
             if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TBView.HorizontalCollectionViewCellIdentifier, for: indexPath) as? HorizontalCollectionViewCell {
                 cell.favoritePokemons = favoritePokemons
                 cell.collectionView.reloadData()
                 return cell
             }
+            
         default:
             return UITableViewCell()
         }
         return UITableViewCell()
     }
+    
 }
 
 // MARK: - UITableViewDelegate

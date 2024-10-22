@@ -28,6 +28,8 @@
 		13196B212CC63FEF00C4BC51 /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B1F2CC63FEF00C4BC51 /* DatePickerCell.swift */; };
 		13196B222CC63FEF00C4BC51 /* DatePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13196B202CC63FEF00C4BC51 /* DatePickerCell.xib */; };
 		13196B242CC640D800C4BC51 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B232CC640D800C4BC51 /* DateHelper.swift */; };
+		13196B2A2CC788DE00C4BC51 /* PhoneNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B282CC788DE00C4BC51 /* PhoneNumberCell.swift */; };
+		13196B2B2CC788DE00C4BC51 /* PhoneNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13196B292CC788DE00C4BC51 /* PhoneNumberCell.xib */; };
 		132C1BDE2CA1B57E0058D62E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132C1BDD2CA1B57E0058D62E /* SettingsViewController.swift */; };
 		134811A42CB3CC3800CC5C66 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134811A32CB3CC3800CC5C66 /* String+Extension.swift */; };
 		134811A62CB3E28C00CC5C66 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134811A52CB3E28C00CC5C66 /* Interceptor.swift */; };
@@ -110,6 +112,8 @@
 		13196B202CC63FEF00C4BC51 /* DatePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerCell.xib; sourceTree = "<group>"; };
 		13196B232CC640D800C4BC51 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		13196B252CC6593500C4BC51 /* MyPokemonApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyPokemonApp.entitlements; sourceTree = "<group>"; };
+		13196B282CC788DE00C4BC51 /* PhoneNumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCell.swift; sourceTree = "<group>"; };
+		13196B292CC788DE00C4BC51 /* PhoneNumberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberCell.xib; sourceTree = "<group>"; };
 		132C1BDD2CA1B57E0058D62E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		134811A32CB3CC3800CC5C66 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		134811A52CB3E28C00CC5C66 /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
@@ -352,6 +356,8 @@
 				13196B0E2CC13EE100C4BC51 /* PokemonCollectionViewCell.xib */,
 				13196B1F2CC63FEF00C4BC51 /* DatePickerCell.swift */,
 				13196B202CC63FEF00C4BC51 /* DatePickerCell.xib */,
+				13196B282CC788DE00C4BC51 /* PhoneNumberCell.swift */,
+				13196B292CC788DE00C4BC51 /* PhoneNumberCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -516,6 +522,7 @@
 				1382154B2C9824CD00076C1C /* Base in Resources */,
 				13196B102CC13EE100C4BC51 /* PokemonCollectionViewCell.xib in Resources */,
 				13ED8FDA2CA5A6BD00D2AD66 /* Base.xcconfig in Resources */,
+				13196B2B2CC788DE00C4BC51 /* PhoneNumberCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +571,7 @@
 				13196AF42CC0F6E200C4BC51 /* UserDefaultsHelper.swift in Sources */,
 				134811A82CB3E2CA00CC5C66 /* EventMonitor.swift in Sources */,
 				134811A42CB3CC3800CC5C66 /* String+Extension.swift in Sources */,
+				13196B2A2CC788DE00C4BC51 /* PhoneNumberCell.swift in Sources */,
 				13956F1F2CA2F53800EAEA17 /* HTTP.swift in Sources */,
 				13196B242CC640D800C4BC51 /* DateHelper.swift in Sources */,
 				13196B0B2CC13E1100C4BC51 /* HorizontalCollectionViewCell.swift in Sources */,

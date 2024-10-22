@@ -56,6 +56,9 @@ struct Constants {
         static let DatePickerCellNibName = "DatePickerCell"
         static let DatePickerCellIdentifier = "DatePickerCellIdentifier"
         
+        static let PhoneNumberCellNibName = "PhoneNumberCell"
+        static let PhoneNumberCellIdentifier = "PhoneNumberCellIdentifier"
+        
         static let HorizontalCollectionViewCellNibName = "HorizontalCollectionViewCell"
         static let HorizontalCollectionViewCellIdentifier = "HorizontalCollectionViewCellIdentifier"
         
