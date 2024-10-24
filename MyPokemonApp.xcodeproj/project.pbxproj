@@ -30,6 +30,12 @@
 		13196B242CC640D800C4BC51 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B232CC640D800C4BC51 /* DateHelper.swift */; };
 		13196B2A2CC788DE00C4BC51 /* PhoneNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B282CC788DE00C4BC51 /* PhoneNumberCell.swift */; };
 		13196B2B2CC788DE00C4BC51 /* PhoneNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13196B292CC788DE00C4BC51 /* PhoneNumberCell.xib */; };
+		13196B2D2CC8E47F00C4BC51 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 13196B2C2CC8E47F00C4BC51 /* README.md */; };
+		13196B312CC8EB5700C4BC51 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B302CC8EB5700C4BC51 /* InputView.swift */; };
+		13196B332CC8EBA600C4BC51 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B322CC8EBA600C4BC51 /* LoginViewController.swift */; };
+		13196B352CC8EC5700C4BC51 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B342CC8EC5700C4BC51 /* RegisterViewController.swift */; };
+		13196B372CC9075A00C4BC51 /* ConstraintsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B362CC9075A00C4BC51 /* ConstraintsHelper.swift */; };
+		13196B392CCA2CF800C4BC51 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13196B382CCA2CF800C4BC51 /* ThemeHelper.swift */; };
 		132C1BDE2CA1B57E0058D62E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132C1BDD2CA1B57E0058D62E /* SettingsViewController.swift */; };
 		134811A42CB3CC3800CC5C66 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134811A32CB3CC3800CC5C66 /* String+Extension.swift */; };
 		134811A62CB3E28C00CC5C66 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134811A52CB3E28C00CC5C66 /* Interceptor.swift */; };
@@ -114,6 +120,12 @@
 		13196B252CC6593500C4BC51 /* MyPokemonApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyPokemonApp.entitlements; sourceTree = "<group>"; };
 		13196B282CC788DE00C4BC51 /* PhoneNumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCell.swift; sourceTree = "<group>"; };
 		13196B292CC788DE00C4BC51 /* PhoneNumberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberCell.xib; sourceTree = "<group>"; };
+		13196B2C2CC8E47F00C4BC51 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		13196B302CC8EB5700C4BC51 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		13196B322CC8EBA600C4BC51 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		13196B342CC8EC5700C4BC51 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		13196B362CC9075A00C4BC51 /* ConstraintsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintsHelper.swift; sourceTree = "<group>"; };
+		13196B382CCA2CF800C4BC51 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		132C1BDD2CA1B57E0058D62E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		134811A32CB3CC3800CC5C66 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		134811A52CB3E28C00CC5C66 /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
@@ -207,6 +219,23 @@
 			path = "VC+PickerView";
 			sourceTree = "<group>";
 		};
+		13196B2E2CC8EAFB00C4BC51 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				13196B302CC8EB5700C4BC51 /* InputView.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		13196B2F2CC8EB0C00C4BC51 /* CustomVC */ = {
+			isa = PBXGroup;
+			children = (
+				13196B322CC8EBA600C4BC51 /* LoginViewController.swift */,
+				13196B342CC8EC5700C4BC51 /* RegisterViewController.swift */,
+			);
+			path = CustomVC;
+			sourceTree = "<group>";
+		};
 		134811A22CB3CC0B00CC5C66 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +248,7 @@
 		138215372C9824CD00076C1C = {
 			isa = PBXGroup;
 			children = (
+				13196B2C2CC8E47F00C4BC51 /* README.md */,
 				138215422C9824CD00076C1C /* MyPokemonApp */,
 				1318714E2CA5A43C00AA9187 /* MyPokemonAppUITests */,
 				1318715D2CA5A44C00AA9187 /* MyPokemonAppUnitTests */,
@@ -271,6 +301,7 @@
 		138215582C982EAE00076C1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				13196B2E2CC8EAFB00C4BC51 /* Commons */,
 				13A788782CB6758C003148B5 /* Cells */,
 				138215492C9824CD00076C1C /* Main.storyboard */,
 				138215732C9845A800076C1C /* PokemonCell.swift */,
@@ -282,6 +313,7 @@
 		138215592C982EBC00076C1C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				13196B2F2CC8EB0C00C4BC51 /* CustomVC */,
 				13196B182CC24FB400C4BC51 /* VC+PickerView */,
 				13196B112CC24D0C00C4BC51 /* VC+TableView */,
 				138215472C9824CD00076C1C /* HomeViewController.swift */,
@@ -328,9 +360,11 @@
 		139A2B0A2CA6E8F8006B0E17 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				13196B362CC9075A00C4BC51 /* ConstraintsHelper.swift */,
 				139A2B0D2CA6ED51006B0E17 /* NavigatorHelper.swift */,
 				13196AF32CC0F6E200C4BC51 /* UserDefaultsHelper.swift */,
 				13196B232CC640D800C4BC51 /* DateHelper.swift */,
+				13196B382CCA2CF800C4BC51 /* ThemeHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -489,6 +523,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13196B2D2CC8E47F00C4BC51 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,10 +585,12 @@
 				139A2B0E2CA6ED51006B0E17 /* NavigatorHelper.swift in Sources */,
 				13196AF62CC115B700C4BC51 /* UserViewController.swift in Sources */,
 				13196B172CC24F1200C4BC51 /* SettingsVC+TableView.swift in Sources */,
+				13196B392CCA2CF800C4BC51 /* ThemeHelper.swift in Sources */,
 				134811AC2CB3F98A00CC5C66 /* UIFont+Custom.swift in Sources */,
 				13AC0FA62CB56E76001A5C37 /* LanguageSelectionViewController.swift in Sources */,
 				138215482C9824CD00076C1C /* HomeViewController.swift in Sources */,
 				13196AFF2CC11BA900C4BC51 /* TrainerImageCell.swift in Sources */,
+				13196B372CC9075A00C4BC51 /* ConstraintsHelper.swift in Sources */,
 				138215642C9839C900076C1C /* PokemonData.swift in Sources */,
 				138215602C9838C600076C1C /* PokemonListData.swift in Sources */,
 				13A7887F2CB675FC003148B5 /* PokemonOverlayImageCell.swift in Sources */,
@@ -562,6 +599,7 @@
 				13ED8FDC2CA5AE5F00D2AD66 /* Environment.swift in Sources */,
 				13196B132CC24D5D00C4BC51 /* DetailsVC+TableView.swift in Sources */,
 				13196B152CC24E4B00C4BC51 /* HomeVC+TableView.swift in Sources */,
+				13196B312CC8EB5700C4BC51 /* InputView.swift in Sources */,
 				134811A62CB3E28C00CC5C66 /* Interceptor.swift in Sources */,
 				13196B1A2CC24FD800C4BC51 /* LanguageSelectionVC+TableView.swift in Sources */,
 				1382156C2C983AE800076C1C /* PokemonManager.swift in Sources */,
@@ -569,6 +607,7 @@
 				138215752C9845A800076C1C /* PokemonCell.swift in Sources */,
 				1382155C2C982F1400076C1C /* Constants.swift in Sources */,
 				13196AF42CC0F6E200C4BC51 /* UserDefaultsHelper.swift in Sources */,
+				13196B352CC8EC5700C4BC51 /* RegisterViewController.swift in Sources */,
 				134811A82CB3E2CA00CC5C66 /* EventMonitor.swift in Sources */,
 				134811A42CB3CC3800CC5C66 /* String+Extension.swift in Sources */,
 				13196B2A2CC788DE00C4BC51 /* PhoneNumberCell.swift in Sources */,
@@ -580,6 +619,7 @@
 				13956F212CA2F5F200EAEA17 /* NetworkManager.swift in Sources */,
 				13832DD82CBFB1CC0094AF4D /* PokemonInfoCell.swift in Sources */,
 				13196B0F2CC13EE100C4BC51 /* PokemonCollectionViewCell.swift in Sources */,
+				13196B332CC8EBA600C4BC51 /* LoginViewController.swift in Sources */,
 				13196B1E2CC289FA00C4BC51 /* KeychainManger.swift in Sources */,
 				13196B212CC63FEF00C4BC51 /* DatePickerCell.swift in Sources */,
 				13196B1C2CC2508400C4BC51 /* UserVC+TableView.swift in Sources */,

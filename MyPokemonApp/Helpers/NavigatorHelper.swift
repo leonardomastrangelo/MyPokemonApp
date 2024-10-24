@@ -19,4 +19,16 @@ extension UIViewController  {
             navigationController?.pushViewController(settingsVC, animated: true)
         }
     }
+    
+    func navigateToTabBarController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let tabBarController = storyboard.instantiateViewController(withIdentifier: "CustomTabBarController") as? CustomTabBarController {
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let window = windowScene.windows.first {
+                window.rootViewController = tabBarController
+                UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
+            }
+        }
+    }
 }

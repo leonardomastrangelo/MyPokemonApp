@@ -41,6 +41,8 @@ extension LanguageSelectionViewController {
         UserDefaults.standard.set(languageCode, forKey: Constants.LocalizedStrings.localizedUserDefaultKey)
         UserDefaults.standard.synchronize()
         
+        NotificationCenter.default.post(name: Notification.Name("LanguageChanged"), object: nil)
+        
         refreshUI()
     }
     

@@ -1,9 +1,16 @@
 // it
 
+"Already_Have_An_Account?" = "Hai già un account? Accedi!";
+"No_Account" = "Non hai un account? Registrati!";
+
+"Register" = "Registrati";
+"Login" = "Accedi";
+
 "Title" = "PokédApp";
 "Select_language" = "Seleziona Lingua";
 "Settings" = "Impostazioni";
 "Home" = "Home";
+"You" = "Tu";
 "Name" = "Nome";
 "Pokédex_Number" = "Numero Pokédex";
 "Type" = "Tipo";

@@ -259,7 +259,7 @@
         <!--Custom Tab Bar Controller-->
         <scene sceneID="kuf-GV-FIL">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JI7-gI-HjB" customClass="CustomTabBarController" customModule="MyPokemonApp_production" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="CustomTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="JI7-gI-HjB" customClass="CustomTabBarController" customModule="MyPokemonApp_production" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UXB-dK-yj6">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -275,11 +275,11 @@
             </objects>
             <point key="canvasLocation" x="1257" y="-35"/>
         </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="cWo-Tj-CVO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eQf-Nj-02p" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" selectedImage="house.fill" id="t6l-mL-mXy"/>
+                    <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" selectedImage="house.fill" id="t6l-mL-mXy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qO3-fs-h8T">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -298,11 +298,11 @@
             </objects>
             <point key="canvasLocation" x="2087.7862595419847" y="-35.211267605633807"/>
         </scene>
-        <!--User-->
+        <!--Navigation Controller-->
         <scene sceneID="fgm-gt-h3M">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ahn-fb-jPL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="User" image="person.fill" catalog="system" selectedImage="person.fill" id="Slc-nA-qUI">
+                    <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" selectedImage="person.fill" id="Slc-nA-qUI">
                         <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
