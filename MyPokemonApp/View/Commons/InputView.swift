@@ -1,6 +1,6 @@
 import UIKit
 
-class InputView: UIView {
+class InputView: UIView, UITextFieldDelegate {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -78,6 +78,9 @@ class InputView: UIView {
         addSubview(actionButton)
         addSubview(navigateButton)
         
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -99,6 +102,11 @@ class InputView: UIView {
             navigateButton.heightAnchor.constraint(equalToConstant: 44),
             navigateButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
         ])
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }

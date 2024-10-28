@@ -19,7 +19,14 @@ class LoginViewController: UIViewController {
         setupInputViewConstraints(loginInputView)
         addButtonTargets()
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
         applyTheme()
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     func addButtonTargets() {
